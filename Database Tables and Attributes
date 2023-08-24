@@ -1,0 +1,112 @@
+#Database
+
+1. Institutional Information:
+
+UniversityID (Primary Key)
+UniversityName
+Address
+ContactNumber
+Website
+
+2. Departments:
+
+DepartmentID (Primary Key)
+DepartmentName
+HOD (Head of Department)
+ContactNumber
+
+3. Courses:
+
+CourseID (Primary Key)
+CourseCode
+CourseName
+Credits
+DepartmentID (Foreign Key)
+Syllabus
+Description
+
+4. Faculties:
+
+FacultyID (Primary Key)
+FirstName
+LastName
+Gender
+ContactNumber
+Email
+DepartmentID (Foreign Key)
+
+5. Students:
+
+StudentID (Primary Key)
+FirstName
+LastName
+Gender
+DateOfBirth
+ContactNumber
+Email
+DepartmentID (Foreign Key)
+Batch
+EnrollmentDate
+Address
+
+6. Enrollments:
+
+EnrollmentID (Primary Key)
+StudentID (Foreign Key)
+CourseID (Foreign Key)
+EnrollmentDate
+
+7. Attendance:
+
+AttendanceID (Primary Key)
+StudentID (Foreign Key)
+CourseID (Foreign Key)
+Date
+Status (Present/Absent)
+
+8. Examinations:
+
+ExamID (Primary Key)
+CourseID (Foreign Key)
+Date
+Duration
+Type (Midterm/Final)
+
+9. Results:
+
+ResultID (Primary Key)
+StudentID (Foreign Key)
+CourseID (Foreign Key)
+ExamID (Foreign Key)
+MarksObtained
+Grade
+
+10. Staff:
+
+StaffID (Primary Key)
+FirstName
+LastName
+Gender
+DateOfBirth
+ContactNumber
+Email
+Role (Admin, Clerk, etc.)
+
+11. Users and Authentication:
+
+UserID (Primary Key)
+Username
+Password (Hashed)
+Role (Student, Faculty, Staff, Admin)
+
+--Not Important--
+12. Events and Activities:
+
+EventID (Primary Key)
+Title
+Description
+Date
+Venue
+
+
+
