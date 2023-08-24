@@ -34,6 +34,7 @@ Gender
 ContactNumber
 Email
 DepartmentID (Foreign Key)
+CourseID
 
 5. Students:
 
