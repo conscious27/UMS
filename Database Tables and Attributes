@@ -15,7 +15,13 @@ DepartmentName
 HOD (Head of Department)
 ContactNumber
 
-3. Courses:
+3. Branch:
+
+BranchID (Primary Key)
+BranchName
+DepartmentID (Foreign Key)
+
+4. Courses:
 
 CourseID (Primary Key)
 CourseCode
@@ -25,7 +31,7 @@ DepartmentID (Foreign Key)
 Syllabus
 Description
 
-4. Faculties:
+5. Faculties:
 
 FacultyID (Primary Key)
 FirstName
@@ -36,7 +42,7 @@ Email
 DepartmentID (Foreign Key)
 CourseID (Foreign Key)
 
-5. Students:
+6. Students:
 
 StudentID (Primary Key)
 FirstName
@@ -46,21 +52,13 @@ DateOfBirth
 ContactNumber
 Email
 DepartmentID (Foreign Key)
-Batch
+BranchID (Foreign Key)
 EnrollmentDate
 Address
 Semester
 
-6. Enrollments:
-
-EnrollmentID (Primary Key)
-StudentID (Foreign Key)
-CourseID (Foreign Key)
-EnrollmentDate
-
 7. Attendance:
 
-AttendanceID (Primary Key)
 StudentID (Foreign Key)
 CourseID (Foreign Key)
 Date
@@ -72,27 +70,23 @@ ExamID (Primary Key)
 CourseID (Foreign Key)
 Date
 Duration
-Type (Midterm/Final)
+Semester
+Type (Midterm/Final/Other)
 
 9. Results:
 
-ResultID (Primary Key)
 StudentID (Foreign Key)
-CourseID (Foreign Key)
 ExamID (Foreign Key)
 MarksObtained
 Grade
 
-10. Staff:
-
-StaffID (Primary Key)
+10. Admin:
+AdminID
 FirstName
 LastName
 Gender
-DateOfBirth
 ContactNumber
 Email
-Role (Admin, Clerk, etc.)
 
 11. Users and Authentication:
 
@@ -109,6 +103,3 @@ Title
 Description
 Date
 Venue
-
-
-
