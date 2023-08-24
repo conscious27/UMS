@@ -52,14 +52,13 @@ DateOfBirth
 ContactNumber
 Email
 DepartmentID (Foreign Key)
-BatchID (Foreign Key)
+BranchID (Foreign Key)
 EnrollmentDate
 Address
 Semester
 
 7. Attendance:
 
-AttendanceID (Primary Key)
 StudentID (Foreign Key)
 CourseID (Foreign Key)
 Date
@@ -71,27 +70,23 @@ ExamID (Primary Key)
 CourseID (Foreign Key)
 Date
 Duration
-Type (Midterm/Final)
+Semester
+Type (Midterm/Final/Other)
 
 9. Results:
 
-ResultID (Primary Key)
 StudentID (Foreign Key)
-CourseID (Foreign Key)
 ExamID (Foreign Key)
 MarksObtained
 Grade
 
-10. Staff:
-
-StaffID (Primary Key)
+10. Admin:
+AdminID
 FirstName
 LastName
 Gender
-DateOfBirth
 ContactNumber
 Email
-Role (Admin, Clerk, etc.)
 
 11. Users and Authentication:
 
