@@ -48,6 +48,7 @@ DepartmentID (Foreign Key)
 Batch
 EnrollmentDate
 Address
+Semester
 
 6. Enrollments:
 
