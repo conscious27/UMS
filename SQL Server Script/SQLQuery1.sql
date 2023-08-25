@@ -75,6 +75,7 @@ create table Result
 ExamID nvarchar(5) not null,
 MarksObtained int not null,
 Grade nvarchar(1) check (Grade in ('A', 'B', 'C', 'F')),
+Primary Key(StudentID, ExamID),
 Foreign Key (StudentID) References Student(StudentID),
 Foreign Key (ExamID) References Examination(ExamID))
 

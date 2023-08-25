@@ -53,3 +53,14 @@ insert into Admin values('A01', 'Chaitanya','Pradhan', 'Male', '7345654321', 'cp
 insert into Users Values('A01', 'chaitanya', 'ckp@27', 'Admin')
 insert into Users Values('S01', 'raj', 'raj@rnc', 'Student')
 insert into Users Values('F01', 'john', 'john@2001', 'Faculty')
+
+select * from Admin
+select * from Attendance
+select * from Branch
+select * from Course
+select * from Department
+select * from Examination
+select * from Faculty
+select * from Institutional_Information
+select * from Users
+select * from Student
