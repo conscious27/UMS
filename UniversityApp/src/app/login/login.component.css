@@ -1,5 +1,13 @@
-.login_form{
-    width:50%;
-    margin-left: auto;
-    margin-right: auto;
+/* Monochrome Body */
+body {
+    background-color: #f5f5f5;
+    color: #333333;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    .container {
+        padding: 20px;
+    }
 }

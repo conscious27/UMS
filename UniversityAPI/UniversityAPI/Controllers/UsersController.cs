@@ -129,9 +129,36 @@ namespace UniversityAPI.Controllers
             return NoContent();
         }
 
+        public class LoginModel
+        {
+            public string Username { get; set; }
+            public string Password { get; set; }
+            public string UserType { get; set; }
+        }
+
+        [HttpPost("login")]
+        public IActionResult Login(LoginModel model)
+        {
+            var user = _context.Users.FirstOrDefault(x => x.Username == model.Username);
+            if(user == null)
+            {
+                return BadRequest("Invalid username or Password.");
+            }
+
+            if(user.Password == model.Password && model.UserType == user.Role)
+            {
+                return Ok();
+            }
+
+            return BadRequest("Invalid Username and Password.");
+        }
+
         private bool UserExists(string id)
         {
             return (_context.Users?.Any(e => e.UserId == id)).GetValueOrDefault();
         }
+
+
+
     }
 }
