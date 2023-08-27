@@ -1,0 +1,14 @@
+.header {
+    font-family: 'Courier New', Courier, monospace;
+    height: 10%;
+    background-color: rgb(29, 74, 157);
+    color: black;
+    text-align: center;
+}
+.footer {
+    font-family: 'Courier New', Courier, monospace;
+    height: 5%;
+    background-color: lightsalmon;
+    color: black;
+    text-align: center;
+}
