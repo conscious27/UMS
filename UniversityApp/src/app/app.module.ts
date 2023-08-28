@@ -9,6 +9,7 @@ import { AdminDashboardComponent } from './admin/dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminPersonalInfoComponent } from './admin/personal-info/personal-info.component';
+import { BranchComponent } from './admin/branch/branch.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AdminPersonalInfoComponent } from './admin/personal-info/personal-info.
     FacultyDashboardComponent,
     AdminDashboardComponent,
     LoginComponent,
-    AdminPersonalInfoComponent
+    AdminPersonalInfoComponent,
+    BranchComponent
   ],
   imports: [
     BrowserModule,
