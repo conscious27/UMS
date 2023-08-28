@@ -8,6 +8,10 @@ import { FacultyDashboardComponent } from './faculty/dashboard/dashboard.compone
 import { AdminDashboardComponent } from './admin/dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StudentPersonalinfoComponent } from './student/personalinfo/personalinfo.component';
+import { StudentCourseComponent } from './student/course/course.component';
+import { StudentAttendanceComponent } from './student/attendance/attendance.component';
+import { StudentFeeComponent } from './student/fee/fee.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
     StudentDashboardComponent,
     FacultyDashboardComponent,
     AdminDashboardComponent,
-    LoginComponent
+    LoginComponent,
+    StudentPersonalinfoComponent,
+    StudentCourseComponent,
+    StudentAttendanceComponent,
+    StudentFeeComponent,
   ],
   imports: [
     BrowserModule,
