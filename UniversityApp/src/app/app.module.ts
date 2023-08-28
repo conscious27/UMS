@@ -8,6 +8,7 @@ import { FacultyDashboardComponent } from './faculty/dashboard/dashboard.compone
 import { AdminDashboardComponent } from './admin/dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminPersonalInfoComponent } from './admin/personal-info/personal-info.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     StudentDashboardComponent,
     FacultyDashboardComponent,
     AdminDashboardComponent,
-    LoginComponent
+    LoginComponent,
+    AdminPersonalInfoComponent
   ],
   imports: [
     BrowserModule,
