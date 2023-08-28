@@ -19,25 +19,25 @@ Git Setup:
 
 Key Features:
 
-Faculty : 
-  student interaction
-  give assignments
-  update syllabus
-  Recording Attendance
-  provide grades
+1. Faculty : 
+  A. Student interaction
+  B. give assignments
+  C. update syllabus
+  D. Recording Attendance
+  E. provide grades
 
-Admin :
-  Generating Class Schedule
-  course management
-  update student records
+2. Admin :
+  A. Generating Class Schedule
+  B. course management
+  C. update student records
 
-student :
-  course registration
-  Browse courses and syllabus
-  viewing grades
-  accessing study materials
-  communicating with instructions
+3. student :
+  A. course registration
+  B. Browse courses and syllabus
+  C. viewing grades
+  D. accessing study materials
+  E. communicating with instructions
 
-All : 
+4. All : 
   notifications (real-time updates)
   
