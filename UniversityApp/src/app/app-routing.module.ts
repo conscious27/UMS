@@ -8,6 +8,7 @@ import { StudentPersonalinfoComponent } from './student/personalinfo/personalinf
 import { StudentCourseComponent } from './student/course/course.component';
 import { StudentAttendanceComponent } from './student/attendance/attendance.component';
 import { StudentFeeComponent } from './student/fee/fee.component';
+import { AdminPersonalInfoComponent } from './admin/personal-info/personal-info.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path:'student_personalInfo', component:StudentPersonalinfoComponent},
   {path:'student_course',component:StudentCourseComponent},
   {path:'student_attendance',component:StudentAttendanceComponent},
-  {path:'student_fee',component:StudentFeeComponent}
+  {path:'student_fee',component:StudentFeeComponent},
+  {path:'admin_personalInfo', component:AdminPersonalInfoComponent}
 ];
 
 @NgModule({

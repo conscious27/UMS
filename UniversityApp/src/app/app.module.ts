@@ -12,6 +12,7 @@ import { StudentPersonalinfoComponent } from './student/personalinfo/personalinf
 import { StudentCourseComponent } from './student/course/course.component';
 import { StudentAttendanceComponent } from './student/attendance/attendance.component';
 import { StudentFeeComponent } from './student/fee/fee.component';
+import { AdminPersonalInfoComponent } from './admin/personal-info/personal-info.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { StudentFeeComponent } from './student/fee/fee.component';
     StudentCourseComponent,
     StudentAttendanceComponent,
     StudentFeeComponent,
+    AdminPersonalInfoComponent
   ],
   imports: [
     BrowserModule,
