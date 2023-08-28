@@ -4,6 +4,7 @@ body {
     color: #333333;
 }
 
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     /* Adjust styles for smaller screens */

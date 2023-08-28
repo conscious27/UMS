@@ -14,8 +14,16 @@ export class AuthenticationService {
     const body = { username, password, userType };
     return this.http.post('http://localhost:5175/api/Users/login',body).subscribe(
       (response) => {
-        console.log(response);
-        this.router.navigate(['/student_dashboard']);
+        if(userType == "Admin"){
+          this.router.navigate(['/admin_dashboard']);
+        }
+        else if(userType == "Student"){
+          this.router.navigate(['/student_dashboard']);
+        }
+        else if(userType == "Faculty"){
+          this.router.navigate(['/faculty_dashboard']);
+        }
+        
       },
       (error) => {
         console.error(error);

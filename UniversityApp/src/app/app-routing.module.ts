@@ -8,7 +8,9 @@ import { AdminDashboardComponent } from './admin/dashboard/dashboard.component';
 const routes: Routes = [
   {path:'', component:LoginComponent},
   // {path:'', redirectTo: 'login', pathMatch: 'full'},
-  {path:'student_dashboard', component:StudentDashboardComponent}
+  {path:'student_dashboard', component:StudentDashboardComponent},
+  {path:'admin_dashboard', component:AdminDashboardComponent},
+  {path:'faculty_dashboard', component:FacultyDashboardComponent}
 ];
 
 @NgModule({
