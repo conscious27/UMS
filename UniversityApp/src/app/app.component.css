@@ -1,3 +1,8 @@
 .main{
-    background-color: rgb(208, 234, 243);
+    background-color: whitesmoke;
+    min-height: fit-content;
+}
+
+.footer{
+    margin-top: 12px;
 }
