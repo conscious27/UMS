@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminPersonalInfoComponent } from './admin/personal-info/personal-info.component';
 import { ManageDepartmentComponent } from './admin/manage-department/manage-department.component';
+import { BranchComponent } from './admin/branch/branch.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ManageDepartmentComponent } from './admin/manage-department/manage-depa
     AdminDashboardComponent,
     LoginComponent,
     AdminPersonalInfoComponent,
-    ManageDepartmentComponent
+    ManageDepartmentComponent,
+    BranchComponent
   ],
   imports: [
     BrowserModule,
