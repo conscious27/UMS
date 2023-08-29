@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@
 import { NavigationEnd, Router } from '@angular/router';
 import jwt_decode from 'jwt-decode';
 import { AuthenticationService } from './authentication.service';
+import { NavBarAlterService } from './nav-bar-alter.service';
 
 
 @Component({
@@ -12,8 +13,10 @@ import { AuthenticationService } from './authentication.service';
 })
 export class AppComponent implements OnInit {
   navmode:any = "";
-  constructor(private auth: AuthenticationService, private router:Router) {}
-  ngOnInit(): void {
+  constructor(private auth: AuthenticationService, private router:Router,public navBarService:NavBarAlterService) {}
+  ngOnInit(
+  
+  ): void {
     const token: any = localStorage.getItem('authToken');
 
     try{
@@ -21,15 +24,15 @@ export class AppComponent implements OnInit {
 
       console.log(tokenPayload )
       if(tokenPayload.Role === "Admin"){
-        this.navmode = "ADMIN";
-      }
+          this.navBarService.navBarMode = "ADMIN";
+        }
       else if(tokenPayload.Role === "Faculty"){
-        this.navmode = 'FACULTY';
+        this.navBarService.navBarMode = 'FACULTY';
       }
       else if(tokenPayload.Role === "Student"){
-        this.navmode = 'STUDENT';
+        this.navBarService.navBarMode = 'STUDENT';
       }
-      console.log(this.navmode)
+      console.log(this.navBarService.navBarMode)
     }catch(error) {
       localStorage.clear();
       this.router.navigate(['/']);
