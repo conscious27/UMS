@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { AuthenticationService } from './authentication.service';
 import jwt_decode from 'jwt-decode';
 
 @Component({
@@ -10,7 +11,7 @@ import jwt_decode from 'jwt-decode';
 })
 export class AppComponent implements OnInit{
   navmode : string = ''; //Initialize the navmode variable
-  constructor(private router: Router){}
+  constructor(private router: Router, private auth:AuthenticationService){}
   ngOnInit(): void {
   
     this.router.events.subscribe(event => {
@@ -45,5 +46,11 @@ export class AppComponent implements OnInit{
       this.router.navigate(['/']);
     }
  } 
+
+ Logout(){
+  this.auth.logout();
+ }
+
+ 
   // title = 'UniversityApp';
 }

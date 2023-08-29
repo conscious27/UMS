@@ -37,6 +37,14 @@ export class AuthenticationService {
       }
     );
   }
+
+  logout() {
+    // Remove the token from localStorage
+    localStorage.removeItem('authToken');
+
+    // Redirect to the login page (or any other appropriate page)
+    this.router.navigate(['/']); // Replace 'login' with your actual login route
+  }
   
  
   
