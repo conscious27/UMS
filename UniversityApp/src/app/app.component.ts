@@ -1,7 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { AuthenticationService } from './authentication.service';
 import jwt_decode from 'jwt-decode';
+import { AuthenticationService } from './authentication.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,23 +10,11 @@ import jwt_decode from 'jwt-decode';
   styleUrls: ['./app.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnInit{
-  navmode : string = ''; //Initialize the navmode variable
-  constructor(private router: Router, private auth:AuthenticationService){}
+export class AppComponent implements OnInit {
+  navmode:any = "";
+  constructor(private auth: AuthenticationService, private router:Router) {}
   ngOnInit(): void {
-  
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        if (event.urlAfterRedirects === '/admin_dashboard') {
-          this.navAuthentication();
-        }
-      }
-    });
-  }
-
-
- navAuthentication(){
-  const token: any = localStorage.getItem('authToken');
+    const token: any = localStorage.getItem('authToken');
 
     try{
       const tokenPayload:any = jwt_decode(token);
@@ -45,12 +34,13 @@ export class AppComponent implements OnInit{
       localStorage.clear();
       this.router.navigate(['/']);
     }
- } 
 
- Logout(){
-  this.auth.logout();
- }
+  }
+  
+  
+  Logout(){
+    this.auth.logout();
+  }
 
- 
   // title = 'UniversityApp';
 }

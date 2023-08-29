@@ -9,6 +9,7 @@ import { AdminDashboardComponent } from './admin/dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminPersonalInfoComponent } from './admin/personal-info/personal-info.component';
+import { ManageDepartmentComponent } from './admin/manage-department/manage-department.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +18,14 @@ import { AdminPersonalInfoComponent } from './admin/personal-info/personal-info.
     FacultyDashboardComponent,
     AdminDashboardComponent,
     LoginComponent,
-    AdminPersonalInfoComponent
+    AdminPersonalInfoComponent,
+    ManageDepartmentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
