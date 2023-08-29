@@ -13,14 +13,14 @@ export class LoginComponent implements OnInit {
   }
 
     Authentication(){
-      const username = (document.getElementById('username') as HTMLInputElement).value;
+      const userID = (document.getElementById('userID') as HTMLInputElement).value;
       const password = (document.getElementById('password') as HTMLInputElement).value;
       const userType = (document.getElementById('userType') as HTMLSelectElement).value;
 
-      if(username && password && userType)
+      if(userID && password && userType)
       {
 
-        this.authService.authenticate(username, password, userType);
+        this.authService.authenticate(userID, password, userType);
       }
       else
       {
