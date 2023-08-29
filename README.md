@@ -50,3 +50,11 @@ The University Management System (UMS) is a comprehensive platform designed to s
 1. Receive real-time notifications.
 2. Stay updated with announcements.
 
+
+#### table need to created
+assignment
+semester
+fees
+notification
+announcement
+Not important: communication
