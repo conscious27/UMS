@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using UniversityAPI.Models;
 
 namespace UniversityAPI.Controllers
@@ -14,10 +18,12 @@ namespace UniversityAPI.Controllers
     public class UsersController : ControllerBase
     {
         private readonly UniversityDbContext _context;
+        private readonly IConfiguration _configuration;
 
-        public UsersController(UniversityDbContext context)
+        public UsersController(UniversityDbContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
 
         // GET: api/Users
@@ -131,15 +137,40 @@ namespace UniversityAPI.Controllers
 
         public class LoginModel
         {
-            public string Username { get; set; }
+            public string UserID { get; set; }
             public string Password { get; set; }
             public string UserType { get; set; }
+        }
+
+        //JWToken
+        private string CreateToken(LoginModel loginModel)
+        {
+            List<Claim> claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.Name, loginModel.UserID),
+                new Claim("Role", loginModel.UserType)
+            };
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
+                _configuration.GetSection("AppSettings:Token").Value!));
+
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+
+            var token = new JwtSecurityToken(
+                claims: claims,
+                expires: DateTime.Now.AddDays(1),
+                signingCredentials: creds
+                );
+
+            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+
+            return jwt;
         }
 
         [HttpPost("login")]
         public IActionResult Login(LoginModel model)
         {
-            var user = _context.Users.FirstOrDefault(x => x.Username == model.Username);
+            var user = _context.Users.FirstOrDefault(x => x.UserId == model.UserID);
             if(user == null)
             {
                 return BadRequest("Invalid username or Password.");
@@ -147,12 +178,19 @@ namespace UniversityAPI.Controllers
 
             if(user.Password == model.Password && model.UserType == user.Role)
             {
-                return Ok();
+                var loginModel = new LoginModel
+                {
+                    UserID = user.UserId,
+                    UserType = user.Role
+                };
+
+                string token = CreateToken(loginModel);
+                return Ok(new {token = token});
             }
 
             return BadRequest("Invalid Username and Password.");
         }
-
+        
         private bool UserExists(string id)
         {
             return (_context.Users?.Any(e => e.UserId == id)).GetValueOrDefault();
