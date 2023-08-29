@@ -9,7 +9,6 @@ import { NavBarAlterService } from 'src/app/nav-bar-alter.service';
 export class AdminDashboardComponent implements OnInit {
   constructor(
 private navServices:NavBarAlterService
-
   ){}
   ngOnInit(): void {
     // this.navServices.navBarMode = "Admin"

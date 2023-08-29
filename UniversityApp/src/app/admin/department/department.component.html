@@ -1,0 +1,28 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">DepartmentID</th>
+            <th scope="col">Department Name</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">View</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of objs.depList">
+            <td>{{d.DepartmentId}}</td> 
+            <td>{{d.DepartmentName}}</td>
+            <td>{{d.ContactNumber}}</td>
+            <td>
+                <button type="button" id="viewDepartment">View</button>
+            </td>
+            <td>
+                <button type="button" id="viewDepartment">Edit</button>
+            </td>
+            <td>
+                <button type="button" id="viewDepartment">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

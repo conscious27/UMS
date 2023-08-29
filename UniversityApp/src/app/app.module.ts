@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminPersonalInfoComponent } from './admin/personal-info/personal-info.component';
 import { ManageDepartmentComponent } from './admin/manage-department/manage-department.component';
 import { BranchComponent } from './admin/branch/branch.component';
+import { AdminDepartmentComponent } from './admin/department/department.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BranchComponent } from './admin/branch/branch.component';
     LoginComponent,
     AdminPersonalInfoComponent,
     ManageDepartmentComponent,
-    BranchComponent
+    BranchComponent,
+    AdminDepartmentComponent
   ],
   imports: [
     BrowserModule,
