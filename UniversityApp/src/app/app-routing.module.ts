@@ -6,6 +6,7 @@ import { FacultyDashboardComponent } from './faculty/dashboard/dashboard.compone
 import { AdminDashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdminPersonalInfoComponent } from './admin/personal-info/personal-info.component';
 import { AdminDepartmentComponent } from './admin/department/department.component';
+import { BranchComponent } from './admin/branch/branch.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:'admin_dashboard', component:AdminDashboardComponent},
   {path:'faculty_dashboard', component:FacultyDashboardComponent},
   {path:'admin_personalInfo', component:AdminPersonalInfoComponent},
-  {path:'admin_DepartmentInfo', component:AdminDepartmentComponent}
+  {path:'admin_DepartmentInfo', component:AdminDepartmentComponent},
+  {path:'admin_BranchInfo', component:BranchComponent}
 ];
 
 @NgModule({

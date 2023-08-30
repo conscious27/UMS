@@ -6,10 +6,9 @@
                     Departments
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">2</h5>
-                    <p class="card-text">Number of Departments
-                    <p>
-                        <a href="#" class="btn btn-primary">Go</a>
+                    <h5 class="card-title">{{ departmentCount }}</h5>
+                    <p class="card-text">Number of Departments</p>
+                    <a class="btn btn-primary" routerLink="/admin_DepartmentInfo">Go</a>
                 </div>
             </div>
         </div>
@@ -21,7 +20,7 @@
                 <div class="card-body">
                     <h5 class="card-title">5</h5>
                     <p class="card-text">Number of Branches</p>
-                    <a href="#" class="btn btn-primary">Go</a>
+                    <a routerLink="admin_BranchInfo" class="btn btn-primary">Go</a>
                 </div>
             </div>
         </div>
@@ -68,79 +67,79 @@
 </div>
 
 
-<div class="row">
-    <div class="col">
-        <div class="container notification">
+<!-- <div class="row"> -->
+<div class="col">
+    <div class="container notification">
 
-            <h1> Notifications </h1>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Type</th>
-                        <th scope="col">Notification</th>
-                        <th scope="col">Sender</th>
-                        <th scope="col">Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Student</th>
-                        <td>All Students are tested Covid-Positive!</td>
-                        <td>Dr. Ramadhir (Doctor)</td>
-                        <td>Link</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Holiday</th>
-                        <td>Rakshabandhan</td>
-                        <td>Dr. Amit Kumar (Vice Chancellor)</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Warning</th>
-                        <td>100 Student are Jobless!</td>
-                        <td>Dr. Kumar Rahuk (Training Placement Officer)</td>
-                        <td>pdfLink</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="col">
-        <div class="container Announcement">
-
-            <h1> Announcement </h1>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Location</th>
-                        <th scope="col">Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Semester Examination</th>
-                        <td>12 Aug 2023</td>
-                        <td>Campus 1</td>
-                        <td>Link</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Holiday</th>
-                        <td>31 Aug 2023</td>
-                        <td>University</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Open Mic</th>
-                        <td>5 Sep 2023
-                        <td>
-                        <td>Campus BH2
-                        <td>
-                        <td>pdfLink</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <h1> Notifications </h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Type</th>
+                    <th scope="col">Notification</th>
+                    <th scope="col">Sender</th>
+                    <th scope="col">Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Student</th>
+                    <td>All Students are tested Covid-Positive!</td>
+                    <td>Dr. Ramadhir (Doctor)</td>
+                    <td>Link</td>
+                </tr>
+                <tr>
+                    <th scope="row">Holiday</th>
+                    <td>Rakshabandhan</td>
+                    <td>Dr. Amit Kumar (Vice Chancellor)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Warning</th>
+                    <td>100 Student are Jobless!</td>
+                    <td>Dr. Kumar Rahuk (Training Placement Officer)</td>
+                    <td>pdfLink</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
+<div class="col">
+    <div class="container Announcement">
+
+        <h1> Announcement </h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Semester Examination</th>
+                    <td>12 Aug 2023</td>
+                    <td>Campus 1</td>
+                    <td>Link</td>
+                </tr>
+                <tr>
+                    <th scope="row">Holiday</th>
+                    <td>31 Aug 2023</td>
+                    <td>University</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Open Mic</th>
+                    <td>5 Sep 2023
+                    <td>
+                    <td>Campus BH2
+                    <td>
+                    <td>pdfLink</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- </div> -->

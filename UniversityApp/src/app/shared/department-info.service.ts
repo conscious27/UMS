@@ -7,7 +7,7 @@ import { DepartmentInfo } from './department-info.model';
 export class DepartmentInfoService {
   depData:DepartmentInfo = new DepartmentInfo();
   readonly depUrl = 'http://localhost:5175/api/Departments';
-  depList:DepartmentInfo[];
+  public depList:DepartmentInfo[];
   constructor(private objHttp: HttpClient) { }
 
   postDepartmentInfo()
@@ -15,12 +15,15 @@ export class DepartmentInfoService {
     return this.objHttp.post(this.depUrl, this.depData);
   }
   getDepartmentInfoList(){
-    this.objHttp.get(this.depUrl).toPromise().then(res=>this.depList=res as DepartmentInfo[]);
+    return this.objHttp.get(this.depUrl).toPromise().then(res=>this.depList=res as DepartmentInfo[]);
   }
   delDepartmentInfo(id){
     this.objHttp.delete(this.depUrl+"/"+id);
   }
   putDepartmentInfo(){
     this.objHttp.put(this.depUrl+"/"+this.depData.DepartmentId,this.depData);
+  }
+  countDepartment(){
+    return this.objHttp.get(this.depUrl+"/count");
   }
 }

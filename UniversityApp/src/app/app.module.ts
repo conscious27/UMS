@@ -9,7 +9,6 @@ import { AdminDashboardComponent } from './admin/dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminPersonalInfoComponent } from './admin/personal-info/personal-info.component';
-import { ManageDepartmentComponent } from './admin/manage-department/manage-department.component';
 import { BranchComponent } from './admin/branch/branch.component';
 import { AdminDepartmentComponent } from './admin/department/department.component';
 
@@ -21,7 +20,6 @@ import { AdminDepartmentComponent } from './admin/department/department.componen
     AdminDashboardComponent,
     LoginComponent,
     AdminPersonalInfoComponent,
-    ManageDepartmentComponent,
     BranchComponent,
     AdminDepartmentComponent
   ],

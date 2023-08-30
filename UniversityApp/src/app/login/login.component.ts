@@ -10,6 +10,7 @@ export class LoginComponent implements OnInit {
     constructor(private authService: AuthenticationService) {}
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
+    this.authService.logout();
   }
 
     Authentication(){
