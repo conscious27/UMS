@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BranchInfo } from './shared/branch-info.model';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BranchWithDep } from './shared/branch-with-dep';
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +12,14 @@ export class BranchInfoService {
   branchData: BranchInfo = new BranchInfo();
   readonly branchUrl = 'http://localhost:5175/api/Branches';
   branchList: BranchInfo[];
+  branchWithDepList : BranchWithDep[];
   constructor(private objHttp: HttpClient) { }
 
   postBranchInfo() {
     return this.objHttp.post(this.branchUrl, this.branchData);
   }
   getBranchInfoList() {
-    this.objHttp.get(this.branchUrl).toPromise().then(res => this.branchList = res as BranchInfo[]);
+    return this.objHttp.get(this.branchUrl).toPromise().then(res => this.branchList = res as BranchInfo[]);
   }
   delBranchInfo(id) {
     this.objHttp.delete(this.branchUrl + "/" + id);
@@ -29,9 +30,11 @@ export class BranchInfoService {
   countBranch() {
     return this.objHttp.get(this.branchUrl + "/count");
   }
-  getDepartmentsWithMatchingBranch(branchId): Observable<string[]> {
-    return this.objHttp.get<string[]>(`${this.branchUrl}/get-department-name/{branchId}`);
+
+  getBranchesWithDepartment(){
+    return this.objHttp.get(this.branchUrl + "/BranchWithDep").toPromise().then(res => this.branchWithDepList = res as BranchWithDep[]);
   }
+  
   
 }
 

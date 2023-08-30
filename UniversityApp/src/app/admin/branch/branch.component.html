@@ -10,10 +10,10 @@
       </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let b of objs.branchList">
+      <tr *ngFor="let b of objs.branchWithDepList">
           <td>{{b.BranchId}}</td> 
           <td>{{b.BranchName}}</td>
-          <td >{{b.DepartmentId}}</td>
+          <td >{{b.DepartmentName}}</td>
           <td>
               <button type="button" id="viewBranch">View</button>
           </td>
