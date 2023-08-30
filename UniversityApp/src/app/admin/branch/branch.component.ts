@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BranchInfoService } from 'src/app/branch-info.service';
-import { BranchWithDep } from 'src/app/shared/branch-with-dep';
-import { DepartmentInfo } from 'src/app/shared/department-info.model';
 import { ChangeDetectorRef } from '@angular/core';
+import { BranchWithDep } from 'src/app/shared/branch-with-dep';
 
 @Component({
   selector: 'app-branch',
