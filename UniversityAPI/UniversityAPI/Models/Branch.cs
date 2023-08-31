@@ -16,7 +16,7 @@ public partial class Branch
     [Required(ErrorMessage = "Department Must be Chosen")]
     public string DepartmentId { get; set; } = null!;
 
-    public virtual Department Department { get; set; }
+    public virtual Department? Department { get; set; }
 
     public virtual ICollection<Student> Students { get; set; } = new List<Student>();
 }

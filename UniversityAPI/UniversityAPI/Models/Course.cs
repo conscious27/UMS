@@ -27,7 +27,7 @@ public partial class Course
 
     public virtual ICollection<Attendance> Attendances { get; set; } = new List<Attendance>();
 
-    public virtual Department Department { get; set; } = null!;
+    public virtual Department? Department { get; set; } = null!;
 
     public virtual ICollection<Examination> Examinations { get; set; } = new List<Examination>();
 
