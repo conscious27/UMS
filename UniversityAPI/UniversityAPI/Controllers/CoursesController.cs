@@ -129,6 +129,35 @@ namespace UniversityAPI.Controllers
             return NoContent();
         }
 
+        [HttpGet("CourseAddOn")]
+        public async Task<ActionResult<List<CourseAddOn>>> GetBranchesWithDepartment()
+        {
+            var courses = await _context.Courses
+                .Select(c => new CourseAddOn
+                {
+                    CourseId = c.CourseId,
+                    CourseCode = c.CourseCode,
+                    CourseName = c.CourseName,
+                    Credits = c.Credits,
+                    DepartmentName = c.Department.DepartmentName,
+                    Syllabus = c.Syllabus,
+                    Description = c.Description
+                })
+                    .ToListAsync();
+
+
+            return Ok(courses);
+        }
+
+
+
+        [HttpGet("count")]
+        public async Task<IActionResult> GetBranchCount()
+        {
+            var count = await _context.Branches.CountAsync();
+            return Ok(count);
+        }
+
         private bool CourseExists(string id)
         {
             return (_context.Courses?.Any(e => e.CourseId == id)).GetValueOrDefault();

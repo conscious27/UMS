@@ -129,6 +129,33 @@ namespace UniversityAPI.Controllers
             return NoContent();
         }
 
+        [HttpGet("BranchWithDep")]
+        public async Task<ActionResult<List<BranchWithDep>>> GetBranchesWithDepartment()
+        {
+            var branches = await _context.Branches
+                .Select(b => new BranchWithDep
+                {
+                    BranchId = b.BranchId,
+                    BranchName = b.BranchName,
+                    DepartmentName = b.Department.DepartmentName
+                })
+                .ToListAsync();
+
+
+            return Ok(branches);
+        }
+
+
+
+        [HttpGet("count")]
+        public async Task<IActionResult> GetBranchCount()
+        {
+            var count = await _context.Branches.CountAsync();
+            return Ok(count);
+        }
+
+
+
         private bool BranchExists(string id)
         {
             return (_context.Branches?.Any(e => e.BranchId == id)).GetValueOrDefault();

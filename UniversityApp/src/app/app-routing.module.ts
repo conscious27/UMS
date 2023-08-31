@@ -5,6 +5,12 @@ import { StudentDashboardComponent } from './student/dashboard/dashboard.compone
 import { FacultyDashboardComponent } from './faculty/dashboard/dashboard.component';
 import { AdminDashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdminPersonalInfoComponent } from './admin/personal-info/personal-info.component';
+import { AdminDepartmentComponent } from './admin/department/department.component';
+import { BranchComponent } from './admin/branch/branch.component';
+import { CourseComponent } from './admin/course/course.component';
+import { FacultyComponent } from './admin/faculty/faculty.component';
+import { StudentComponent } from './admin/student/student.component';
+
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -12,7 +18,12 @@ const routes: Routes = [
   {path:'student_dashboard', component:StudentDashboardComponent},
   {path:'admin_dashboard', component:AdminDashboardComponent},
   {path:'faculty_dashboard', component:FacultyDashboardComponent},
-  {path:'admin_personalInfo', component:AdminPersonalInfoComponent}
+  {path:'admin_personalInfo', component:AdminPersonalInfoComponent},
+  {path:'admin_DepartmentInfo', component:AdminDepartmentComponent},
+  {path:'admin_BranchInfo', component:BranchComponent},
+  {path:'admin_CourseInfo', component:CourseComponent},
+  {path:'admin_FacultyInfo', component:FacultyComponent},
+  {path:'admin_StudentInfo', component:StudentComponent}
 ];
 
 @NgModule({

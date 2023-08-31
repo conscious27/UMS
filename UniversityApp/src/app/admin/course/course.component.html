@@ -1,0 +1,37 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Course ID</th>
+            <th scope="col">Course Code</th>
+            <th scope="col">Course Name</th>
+            <th scope="col">Credits</th>
+            <th scope="col">Department Name</th>
+            <th scope="col">Syllabus</th>
+            <th scope="col">Description</th>
+            <th scope="col">View</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of objs.CourseAddOnList">
+            <td>{{c.CourseId}}</td> 
+            <td>{{c.CourseCode}}</td>
+            <td >{{c.CourseName}}</td>
+            <td>{{c.Credits}}</td> 
+            <td>{{c.DepartmentName}}</td>
+            <td>{{c.Syllabus}}</td>
+            <td >{{c.Description}}</td>
+            <td>
+                <button type="button" id="viewCourse">View</button>
+            </td>
+            <td>
+                <button type="button" id="EditCourse">Edit</button>
+            </td>
+            <td>
+                <button type="button" id="DeleteCourse">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+  
