@@ -8,10 +8,15 @@ import { DepartmentInfoService } from 'src/app/shared/department-info.service';
   styleUrls: ['./department-reg.component.css']
 })
 export class DepartmentRegComponent implements OnInit {
+  existingDepartmentId = this.objService.depData.DepartmentId;
   constructor(public objService:DepartmentInfoService){}
   ngOnInit(){
-    this.resetForm()
-
+    if(this.existingDepartmentId){
+      this.existingDepartmentId = this.objService.depData.DepartmentId;
+    }
+    else{
+      this.resetForm()
+    }
   }
 
   resetForm(form?:NgForm){
@@ -20,7 +25,7 @@ export class DepartmentRegComponent implements OnInit {
       form.form.reset();
     }
     else{
-      this.objService.depData = {DepartmentId:"", DepartmentName:"", ContactNumber:""}
+      this.objService.depData = {DepartmentId:this.existingDepartmentId, DepartmentName:"", ContactNumber:""}
     }
   }
 
