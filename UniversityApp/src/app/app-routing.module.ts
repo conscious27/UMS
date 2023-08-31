@@ -9,6 +9,7 @@ import { AdminDepartmentComponent } from './admin/department/department.componen
 import { BranchComponent } from './admin/branch/branch.component';
 import { CourseComponent } from './admin/course/course.component';
 import { FacultyComponent } from './admin/faculty/faculty.component';
+import { StudentComponent } from './admin/student/student.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'admin_DepartmentInfo', component:AdminDepartmentComponent},
   {path:'admin_BranchInfo', component:BranchComponent},
   {path:'admin_CourseInfo', component:CourseComponent},
-  {path:'admin_FacultyInfo', component:FacultyComponent}
+  {path:'admin_FacultyInfo', component:FacultyComponent},
+  {path:'admin_StudentInfo', component:StudentComponent}
 ];
 
 @NgModule({

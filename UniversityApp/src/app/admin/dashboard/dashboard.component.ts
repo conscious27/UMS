@@ -5,6 +5,7 @@ import { BranchComponent } from '../branch/branch.component';
 import { BranchInfoService } from 'src/app/branch-info.service';
 import { CourseInfoService } from 'src/app/shared/course-info.service';
 import { FacultyInfoService } from 'src/app/shared/faculty-info.service';
+import { StudentInfoService } from 'src/app/shared/student-info.service';
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './dashboard.component.html',
@@ -15,18 +16,21 @@ export class AdminDashboardComponent implements OnInit {
   constructor(
     private navServices: NavBarAlterService, public departmentService: DepartmentInfoService,
     public cdRef:ChangeDetectorRef, public branchService: BranchInfoService,
-    public courseService:CourseInfoService, public facultyService:FacultyInfoService) { }
+    public courseService:CourseInfoService, public facultyService:FacultyInfoService,
+    public studentService:StudentInfoService) { }
 
   public departmentCount: any;
   public branchCount: any;
   public courseCount: any;
   public facultyCount : any;
+  public studentCount : any;
   ngOnInit(): void {
     // this.navServices.navBarMode = "Admin"
     this.getDepartmentCount()
     this.getBranchCount()
     this.getCourseCount()
     this.getFacultyCount()
+    this.getStudentCount()
   }
 
   getDepartmentCount() {
@@ -63,6 +67,16 @@ export class AdminDashboardComponent implements OnInit {
     this.facultyService.countFaculty().subscribe(
       (count) => {
         this.facultyCount = count;
+        this.cdRef.detectChanges();
+      },
+      error => console.error(error)
+    );
+  }
+
+  getStudentCount() {
+    this.studentService.countStudent().subscribe(
+      (count) => {
+        this.studentCount = count;
         this.cdRef.detectChanges();
       },
       error => console.error(error)
