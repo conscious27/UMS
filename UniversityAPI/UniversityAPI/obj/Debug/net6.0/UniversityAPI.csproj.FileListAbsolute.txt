@@ -528,3 +528,4 @@ D:\Project Genpact\UMS\UniversityAPI\UniversityAPI\obj\Debug\net6.0\UniversityAP
 D:\Project Genpact\UMS\UniversityAPI\UniversityAPI\obj\Debug\net6.0\UniversityAPI.genruntimeconfig.cache
 D:\Project Genpact\UMS\UniversityAPI\UniversityAPI\obj\Debug\net6.0\ref\UniversityAPI.dll
 D:\Project Genpact\UMS\UniversityAPI\UniversityAPI\bin\Debug\net6.0\BCrypt.Net-Next.dll
+C:\UMS\UniversityAPI\UniversityAPI\bin\Debug\net6.0\BCrypt.Net-Next.dll

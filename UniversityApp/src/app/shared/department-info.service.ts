@@ -18,10 +18,10 @@ export class DepartmentInfoService {
     return this.objHttp.get(this.depUrl).toPromise().then(res=>this.depList=res as DepartmentInfo[]);
   }
   delDepartmentInfo(id){
-    this.objHttp.delete(this.depUrl+"/"+id);
+    return this.objHttp.delete(this.depUrl+"/"+id);
   }
   putDepartmentInfo(){
-    this.objHttp.put(this.depUrl+"/"+this.depData.DepartmentId,this.depData);
+    return this.objHttp.put(this.depUrl+"/"+this.depData.DepartmentId,this.depData);
   }
   countDepartment(){
     return this.objHttp.get(this.depUrl+"/count");
