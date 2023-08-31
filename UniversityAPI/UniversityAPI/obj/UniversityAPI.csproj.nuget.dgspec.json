@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\UMS\\UniversityAPI\\UniversityAPI\\UniversityAPI.csproj": {}
+    "C:\\Users\\ACER\\OneDrive\\Documents\\Final Project Genpact\\UMS\\UMS\\UniversityAPI\\UniversityAPI\\UniversityAPI.csproj": {}
   },
   "projects": {
-    "C:\\UMS\\UniversityAPI\\UniversityAPI\\UniversityAPI.csproj": {
+    "C:\\Users\\ACER\\OneDrive\\Documents\\Final Project Genpact\\UMS\\UMS\\UniversityAPI\\UniversityAPI\\UniversityAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\UMS\\UniversityAPI\\UniversityAPI\\UniversityAPI.csproj",
+        "projectUniqueName": "C:\\Users\\ACER\\OneDrive\\Documents\\Final Project Genpact\\UMS\\UMS\\UniversityAPI\\UniversityAPI\\UniversityAPI.csproj",
         "projectName": "UniversityAPI",
-        "projectPath": "C:\\UMS\\UniversityAPI\\UniversityAPI\\UniversityAPI.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\UMS\\UniversityAPI\\UniversityAPI\\obj\\",
+        "projectPath": "C:\\Users\\ACER\\OneDrive\\Documents\\Final Project Genpact\\UMS\\UMS\\UniversityAPI\\UniversityAPI\\UniversityAPI.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ACER\\OneDrive\\Documents\\Final Project Genpact\\UMS\\UMS\\UniversityAPI\\UniversityAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -79,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
