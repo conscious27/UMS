@@ -8,6 +8,7 @@ import { AdminPersonalInfoComponent } from './admin/personal-info/personal-info.
 import { AdminDepartmentComponent } from './admin/department/department.component';
 import { BranchComponent } from './admin/branch/branch.component';
 import { CourseComponent } from './admin/course/course.component';
+import { FacultyComponent } from './admin/faculty/faculty.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'admin_personalInfo', component:AdminPersonalInfoComponent},
   {path:'admin_DepartmentInfo', component:AdminDepartmentComponent},
   {path:'admin_BranchInfo', component:BranchComponent},
-  {path:'admin_CourseInfo', component:CourseComponent}
+  {path:'admin_CourseInfo', component:CourseComponent},
+  {path:'admin_FacultyInfo', component:FacultyComponent}
 ];
 
 @NgModule({
