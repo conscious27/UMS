@@ -13,4 +13,22 @@ export class AdminDepartmentComponent implements OnInit {
     this.objs.getDepartmentInfoList();
   }
 
+  fillForm(selectedDep)
+  {
+    this.objs.depData = Object.assign({}, selectedDep)
+  }
+
+  onDelete(depId)
+  {
+    if(confirm('Are you sure you want to delete this Department ?'))
+    {
+      this.objs.delDepartmentInfo(depId).subscribe(
+        res=>{this.objs.getDepartmentInfoList()
+        },
+        err=>{alert("ERROR OCUURED " + err);
+      }
+      )
+    }
+  }
+
 }

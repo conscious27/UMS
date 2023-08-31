@@ -4,7 +4,6 @@
             <th scope="col">DepartmentID</th>
             <th scope="col">Department Name</th>
             <th scope="col">Contact Number</th>
-            <th scope="col">View</th>
             <th scope="col">Update</th>
             <th scope="col">Delete</th>
         </tr>
@@ -15,10 +14,7 @@
             <td>{{d.DepartmentName}}</td>
             <td>{{d.ContactNumber}}</td>
             <td>
-                <button type="button" id="viewDepartment">View</button>
-            </td>
-            <td>
-                <button type="button" id="viewDepartment">Edit</button>
+                <button type="button" id="viewDepartment" routerLink="/departmentReg" (click)="fillForm(d)">Edit</button>
             </td>
             <td>
                 <button type="button" id="viewDepartment">Delete</button>

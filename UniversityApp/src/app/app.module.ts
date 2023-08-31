@@ -14,6 +14,7 @@ import { AdminDepartmentComponent } from './admin/department/department.componen
 import { CourseComponent } from './admin/course/course.component';
 import { FacultyComponent } from './admin/faculty/faculty.component';
 import { StudentComponent } from './admin/student/student.component';
+import { DepartmentRegComponent } from './admin/department-reg/department-reg.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { StudentComponent } from './admin/student/student.component';
     AdminDepartmentComponent,
     CourseComponent,
     FacultyComponent,
-    StudentComponent
+    StudentComponent,
+    DepartmentRegComponent
   ],
   imports: [
     BrowserModule,
