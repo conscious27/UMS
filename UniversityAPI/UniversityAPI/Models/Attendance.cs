@@ -18,7 +18,7 @@ public partial class Attendance
     [StringLength(10)]
     public string? Status { get; set; }
 
-    public virtual Course Course { get; set; } = null!;
+    public virtual Course? Course { get; set; } = null!;
 
-    public virtual Student Student { get; set; } = null!;
+    public virtual Student? Student { get; set; } = null!;
 }

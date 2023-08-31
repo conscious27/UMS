@@ -8,7 +8,7 @@ public partial class Faculty
 {
     [Key]
     [StringLength(5, ErrorMessage = "FacultyID Length Cannot Exceeds 5 Character")]
-    [RegularExpression(@"^C.*", ErrorMessage = "FacultyID must start with F")]
+    [RegularExpression(@"^F.*", ErrorMessage = "FacultyID must start with F")]
     public string FacultyId { get; set; } = null!;
 
     [Required(ErrorMessage = "First Name is Required")]
@@ -23,7 +23,8 @@ public partial class Faculty
     [RegularExpression(@"[0-9]{10}", ErrorMessage = "Invalid Contact")]
     public string? ContactNumber { get; set; }
     [Required(ErrorMessage = "Email is Required")]
-    [RegularExpression(@"^.* 0%. .$", ErrorMessage = "Invalid Email")]
+    //[RegularExpression(@"^.* 0%. .$", ErrorMessage = "Invalid Email")]
+    [EmailAddress]
     [StringLength(255)]
     public string? Email { get; set; }
     [Required]
@@ -31,7 +32,7 @@ public partial class Faculty
     [Required]
     public string CourseId { get; set; } = null!;
 
-    public virtual Course Course { get; set; } = null!;
+    public virtual Course? Course { get; set; } = null!;
 
-    public virtual Department Department { get; set; } = null!;
+    public virtual Department? Department { get; set; } = null!;
 }

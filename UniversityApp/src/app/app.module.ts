@@ -17,6 +17,7 @@ import { StudentComponent } from './admin/student/student.component';
 import { DepartmentRegComponent } from './admin/department-reg/department-reg.component';
 import { BranchRegComponent } from './admin/branch-reg/branch-reg.component';
 import { CourseRegComponent } from './admin/course-reg/course-reg.component';
+import { FacultyRegComponent } from './admin/faculty-reg/faculty-reg.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CourseRegComponent } from './admin/course-reg/course-reg.component';
     StudentComponent,
     DepartmentRegComponent,
     BranchRegComponent,
-    CourseRegComponent
+    CourseRegComponent,
+    FacultyRegComponent
   ],
   imports: [
     BrowserModule,

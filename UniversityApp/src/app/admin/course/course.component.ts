@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CourseInfoService } from 'src/app/shared/course-info.service';
 
 @Component({
