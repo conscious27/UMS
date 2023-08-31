@@ -1,3 +1,7 @@
+<div><button type="button" (click)="createNew()" routerLink="/departmentReg">Create New</button></div>
+
+
+
 <table class="table table-hover">
     <thead>
         <tr>
@@ -17,7 +21,7 @@
                 <button type="button" id="viewDepartment" routerLink="/departmentReg" (click)="fillForm(d)">Edit</button>
             </td>
             <td>
-                <button type="button" id="viewDepartment">Delete</button>
+                <button type="button" id="viewDepartment" (click)="onDelete(d.DepartmentId)">Delete</button>
             </td>
         </tr>
     </tbody>

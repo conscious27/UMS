@@ -9,10 +9,12 @@ import { DepartmentInfoService } from 'src/app/shared/department-info.service';
 })
 export class DepartmentRegComponent implements OnInit {
   existingDepartmentId = this.objService.depData.DepartmentId;
+  mode:any;
   constructor(public objService:DepartmentInfoService){}
   ngOnInit(){
     if(this.existingDepartmentId){
       this.existingDepartmentId = this.objService.depData.DepartmentId;
+      this.mode="update";
     }
     else{
       this.resetForm()
@@ -25,13 +27,18 @@ export class DepartmentRegComponent implements OnInit {
       form.form.reset();
     }
     else{
-      this.objService.depData = {DepartmentId:this.existingDepartmentId, DepartmentName:"", ContactNumber:""}
+      this.objService.depData = {DepartmentId:"", DepartmentName:"", ContactNumber:""}
     }
   }
 
   onSubmit(form:NgForm)
   {
+    if(this.mode=="update"){
       this.updateRecord(form);
+    }else{
+      this.insertRecord(form);
+    }
+      
   }
 
   insertRecord(form:NgForm)

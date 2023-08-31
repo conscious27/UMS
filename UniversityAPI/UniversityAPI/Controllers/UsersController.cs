@@ -147,7 +147,7 @@ namespace UniversityAPI.Controllers
         {
             List<Claim> claims = new List<Claim>()
             {
-                new Claim(ClaimTypes.Name, loginModel.UserID),
+                new Claim("AdminId", loginModel.UserID),
                 new Claim("Role", loginModel.UserType)
             };
 

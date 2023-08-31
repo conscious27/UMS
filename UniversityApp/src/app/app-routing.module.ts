@@ -25,7 +25,8 @@ const routes: Routes = [
   {path:'admin_CourseInfo', component:CourseComponent},
   {path:'admin_FacultyInfo', component:FacultyComponent},
   {path:'admin_StudentInfo', component:StudentComponent},
-  {path:'departmentReg', component:DepartmentRegComponent}
+  {path:'departmentReg', component:DepartmentRegComponent},
+  {path:'adminInfo', component:AdminPersonalInfoComponent}
 ];
 
 @NgModule({

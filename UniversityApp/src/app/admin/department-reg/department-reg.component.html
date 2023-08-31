@@ -6,7 +6,7 @@
                 <div class="input-group-text bg-white">
                     <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="DepartmentId.valid"
                         [class.red-icon]="DepartmentId.invalid && DepartmentId.touched"></i>
-                    <input readonly name="DepartmentId" #DepartmentId="ngModel" [(ngModel)]="objService.depData.DepartmentId"
+                    <input name="DepartmentId" #DepartmentId="ngModel" [(ngModel)]="objService.depData.DepartmentId"
                         placeholder="Department Id" class="form-control"required>
                 </div>
             </div>
@@ -43,6 +43,8 @@
 
     <div class="form-group">
         <button class="btn btn-success btn-lg" type="submit" [disabled]="form.invalid">
-            <i class="fa fa-database"></i> Update Department </button>
+            <i class="fa fa-database"></i> Create/Update Department </button>
     </div>
+
+    
 </form>
