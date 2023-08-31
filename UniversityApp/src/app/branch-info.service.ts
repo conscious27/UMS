@@ -10,6 +10,7 @@ export class BranchInfoService {
 
 
   branchData: BranchInfo = new BranchInfo();
+  branchWithDepData : BranchWithDep = new BranchWithDep();
   readonly branchUrl = 'http://localhost:5175/api/Branches';
   branchList: BranchInfo[];
   branchWithDepList : BranchWithDep[];
@@ -22,10 +23,10 @@ export class BranchInfoService {
     return this.objHttp.get(this.branchUrl).toPromise().then(res => this.branchList = res as BranchInfo[]);
   }
   delBranchInfo(id) {
-    this.objHttp.delete(this.branchUrl + "/" + id);
+    return this.objHttp.delete(this.branchUrl + "/" + id);
   }
   putBranchInfo() {
-    this.objHttp.put(this.branchUrl + "/" + this.branchData.BranchId, this.branchData);
+    return this.objHttp.put(this.branchUrl + "/" + this.branchData.BranchId, this.branchData);
   }
   countBranch() {
     return this.objHttp.get(this.branchUrl + "/count");

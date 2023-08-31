@@ -4,21 +4,17 @@
           <th scope="col">BranchID</th>
           <th scope="col">Branch Name</th>
           <th scope="col">Department Name</th>
-          <th scope="col">View</th>
           <th scope="col">Update</th>
           <th scope="col">Delete</th>
       </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let b of objs.branchWithDepList">
+      <tr *ngFor="let b of objs.branchWithDepList; let i=index">
           <td>{{b.BranchId}}</td> 
           <td>{{b.BranchName}}</td>
           <td >{{b.DepartmentName}}</td>
           <td>
-              <button type="button" id="viewBranch">View</button>
-          </td>
-          <td>
-              <button type="button" id="EditBranch">Edit</button>
+              <button type="button" id="EditBranch" (click)="fillForm(objs.branchList[i])" routerLink="/branchReg">Edit</button>
           </td>
           <td>
               <button type="button" id="DeleteBranch">Delete</button>

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BranchInfoService } from 'src/app/branch-info.service';
-import { ChangeDetectorRef } from '@angular/core';
-import { BranchWithDep } from 'src/app/shared/branch-with-dep';
 
 @Component({
   selector: 'app-branch',
@@ -9,10 +7,36 @@ import { BranchWithDep } from 'src/app/shared/branch-with-dep';
   styleUrls: ['./branch.component.css']
 })
 export class BranchComponent implements OnInit {
-  constructor(public objs: BranchInfoService, public cdRef: ChangeDetectorRef) {}
+  constructor(public objs: BranchInfoService) {}
 
   ngOnInit(): void {
     this.objs.getBranchesWithDepartment();
-    console.log(this.objs.branchWithDepList)
+    this.objs.getBranchInfoList();
+  }
+
+  fillForm(selectedBranch)
+  {
+    this.objs.branchData = Object.assign({}, selectedBranch)
+  }
+
+  createNew() {
+    this.objs.branchData = { BranchId: "", BranchName: "", DepartmentId: "" };
+  }
+
+
+  onDelete(depId)
+  {
+    if(confirm('Are you sure you want to delete this Department ?'))
+    {
+      this.objs.delBranchInfo(depId).subscribe(
+        res=>{
+          alert('Department Deleted');
+          this.objs.getBranchInfoList();
+          
+        },
+        err=>{alert("ERROR OCUURED " + err);
+      }
+      )
+    }
   }
 }
