@@ -1,3 +1,6 @@
+<div><button type="button" (click)="createNew()" routerLink="/studentReg">Create New</button></div>
+
+
 <table class="table table-hover">
     <thead>
         <tr>
@@ -13,13 +16,12 @@
             <th scope="col">Enrollment Date</th>
             <th scope="col">Address</th>
             <th scope="col">Semester Date</th>
-            <th scope="col">View</th>
             <th scope="col">Update</th>
             <th scope="col">Delete</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let s of objs.StudentAddOnList">
+        <tr *ngFor="let s of objs.StudentAddOnList; let i=index">
             <td>{{s.StudentId}}</td> 
             <td>{{s.FirstName}}</td>
             <td >{{s.LastName}}</td>
@@ -33,13 +35,10 @@
             <td >{{s.Saddress}}</td>
             <td >{{s.Semester}}</td>
             <td>
-                <button type="button" id="viewCourse">View</button>
+                <button type="button" id="EditCourse" (click)="fillForm(objs.StudentList[i])" routerLink="/studentReg">Edit</button>
             </td>
             <td>
-                <button type="button" id="EditCourse">Edit</button>
-            </td>
-            <td>
-                <button type="button" id="DeleteCourse">Delete</button>
+                <button type="button" id="DeleteCourse" (click)="onDelete(s.StudentId)">Delete</button>
             </td>
         </tr>
     </tbody>
