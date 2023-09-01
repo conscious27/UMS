@@ -33,7 +33,7 @@
                 <div class="input-group-text bg-white">
                     <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="DepartmentId.valid"
                         [class.red-icon]="DepartmentId.invalid && DepartmentId.touched"></i>
-                    <select name="DepartmentId" #DepartmentId="ngModel" id="DepartmentName" [(ngModel)]="objService.branchData.DepartmentId"
+                    <select name="DepartmentId" #DepartmentId="ngModel" id="DepartmentId" [(ngModel)]="objService.branchData.DepartmentId"
                         class="form-control" required>
                         <option *ngFor="let department of depService.depList" [value]="department.DepartmentId">{{
                             department.DepartmentName }}</option>
