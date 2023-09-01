@@ -1,51 +1,74 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-        <div class="form-group">
-          <label for="BranchId">Branch Id</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text bg-white">
-                <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="BranchId.valid" [class.red-icon]="BranchId.invalid && BranchId.touched"></i>
-              </span>
-            </div>
-            <input name="BranchId" #BranchId="ngModel" [(ngModel)]="objService.branchData.BranchId" id="BranchId" class="form-control" placeholder="Branch Id" required>
-          </div>
-        </div>
+/* Apply some general styles */
+body {
+  font-family: Arial, sans-serif;
+}
 
-        <div class="form-group">
-          <label for="BranchName">Branch Name</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text bg-white">
-                <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="BranchName.valid" [class.red-icon]="BranchName.invalid && BranchName.touched"></i>
-              </span>
-            </div>
-            <input name="BranchName" #BranchName="ngModel" [(ngModel)]="objService.branchData.BranchName" id="BranchName" class="form-control" placeholder="Branch Name" required>
-          </div>
-        </div>
+.container {
+  margin-top: 30px;
+}
 
-        <div class="form-group">
-          <label for="DepartmentId">Department</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text bg-white">
-                <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="DepartmentId.valid" [class.red-icon]="DepartmentId.invalid && DepartmentId.touched"></i>
-              </span>
-            </div>
-            <select name="DepartmentId" #DepartmentId="ngModel" id="DepartmentName" [(ngModel)]="objService.branchData.DepartmentId" class="form-control" required>
-              <option *ngFor="let department of depService.depList" [value]="department.DepartmentId">{{ department.DepartmentName }}</option>
-            </select>
-          </div>
-        </div>
+/* Style for form labels */
+label {
+  font-weight: bold;
+}
 
-        <div class="form-group">
-          <button class="btn btn-success btn-lg" type="submit" [disabled]="form.invalid">
-            <i class="fa fa-database"></i> Create/Update Branch
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+/* Style for input icons */
+.input-group-text {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+/* Style for green and red icons */
+.green-icon {
+  color: green;
+}
+
+.red-icon {
+  color: red;
+}
+
+/* Style for select input */
+.select-group {
+  position: relative;
+}
+
+.select-group select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.select-group select::placeholder {
+  color: #999;
+}
+
+.select-group .select-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Style for submit button */
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
