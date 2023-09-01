@@ -46,9 +46,9 @@ public partial class Student
 
     public virtual ICollection<Attendance> Attendances { get; set; } = new List<Attendance>();
 
-    public virtual Branch Branch { get; set; } = null!;
+    public virtual Branch? Branch { get; set; } = null!;
 
-    public virtual Department Department { get; set; } = null!;
+    public virtual Department? Department { get; set; } = null!;
 
     public virtual ICollection<Result> Results { get; set; } = new List<Result>();
 }

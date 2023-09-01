@@ -22,10 +22,10 @@ export class CourseInfoService {
     return this.objHttp.get(this.CourseUrl).toPromise().then(res => this.CourseList = res as CourseInfo[]);
   }
   delCourseInfo(id) {
-    this.objHttp.delete(this.CourseUrl + "/" + id);
+    return this.objHttp.delete(this.CourseUrl + "/" + id);
   }
   putCourseInfo() {
-    this.objHttp.put(this.CourseUrl + "/" + this.CourseData.CourseId, this.CourseData);
+    return this.objHttp.put(this.CourseUrl + "/" + this.CourseData.CourseId, this.CourseData);
   }
   countCourse() {
     return this.objHttp.get(this.CourseUrl + "/count");

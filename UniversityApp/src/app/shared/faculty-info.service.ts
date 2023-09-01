@@ -21,10 +21,10 @@ export class FacultyInfoService {
     return this.objHttp.get(this.FacultyUrl).toPromise().then(res => this.FacultyList = res as FacultyInfo[]);
   }
   delFacultyInfo(id) {
-    this.objHttp.delete(this.FacultyUrl + "/" + id);
+    return this.objHttp.delete(this.FacultyUrl + "/" + id);
   }
   putFacultyInfo() {
-    this.objHttp.put(this.FacultyUrl + "/" + this.FacultyData.FacultyId, this.FacultyData);
+    return this.objHttp.put(this.FacultyUrl + "/" + this.FacultyData.FacultyId, this.FacultyData);
   }
   countFaculty() {
     return this.objHttp.get(this.FacultyUrl + "/count");

@@ -130,7 +130,7 @@ namespace UniversityAPI.Controllers
         }
 
         [HttpGet("CourseAddOn")]
-        public async Task<ActionResult<List<CourseAddOn>>> GetBranchesWithDepartment()
+        public async Task<ActionResult<List<CourseAddOn>>> GetCoursesAddOn()
         {
             var courses = await _context.Courses
                 .Select(c => new CourseAddOn
@@ -152,9 +152,9 @@ namespace UniversityAPI.Controllers
 
 
         [HttpGet("count")]
-        public async Task<IActionResult> GetBranchCount()
+        public async Task<IActionResult> GetCourseCount()
         {
-            var count = await _context.Branches.CountAsync();
+            var count = await _context.Courses.CountAsync();
             return Ok(count);
         }
 
