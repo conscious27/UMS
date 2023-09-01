@@ -1,74 +1,60 @@
-/* Apply some general styles */
-body {
-  font-family: Arial, sans-serif;
-}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Your Page Title</title>
+  <!-- Add the CSS link below -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+          <div class="form-group">
+            <label for="DepartmentId">Department Id</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white">
+                  <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="DepartmentId.valid" [class.red-icon]="DepartmentId.invalid && DepartmentId.touched"></i>
+                </span>
+              </div>
+              <input name="DepartmentId" #DepartmentId="ngModel" [(ngModel)]="objService.depData.DepartmentId" id="DepartmentId" class="form-control" placeholder="Department Id" required>
+            </div>
+          </div>
 
-.container {
-  margin-top: 30px;
-}
+          <div class="form-group">
+            <label for="DepartmentName">Department Name</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white">
+                  <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="DepartmentName.valid" [class.red-icon]="DepartmentName.invalid && DepartmentName.touched"></i>
+                </span>
+              </div>
+              <input name="DepartmentName" #DepartmentName="ngModel" [(ngModel)]="objService.depData.DepartmentName" id="DepartmentName" class="form-control" placeholder="Department Name" required>
+            </div>
+          </div>
 
-/* Style for form labels */
-label {
-  font-weight: bold;
-}
+          <div class="form-group">
+            <label for="ContactNumber">Contact Number</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white">
+                  <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="ContactNumber.valid" [class.red-icon]="ContactNumber.invalid && ContactNumber.touched"></i>
+                </span>
+              </div>
+              <input name="ContactNumber" #ContactNumber="ngModel" [(ngModel)]="objService.depData.ContactNumber" id="ContactNumber" class="form-control" placeholder="Contact Number" required maxlength="10" minlength="10">
+            </div>
+          </div>
 
-/* Style for input icons */
-.input-group-text {
-  background-color: #fff;
-  border: 1px solid #ccc;
-}
-
-/* Style for green and red icons */
-.green-icon {
-  color: green;
-}
-
-.red-icon {
-  color: red;
-}
-
-/* Style for select input */
-.select-group {
-  position: relative;
-}
-
-.select-group select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  width: 100%;
-  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-  cursor: pointer;
-  outline: none;
-}
-
-.select-group select::placeholder {
-  color: #999;
-}
-
-.select-group .select-icon {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-/* Style for submit button */
-.btn-success {
-  background-color: #28a745;
-  border-color: #28a745;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.btn-success:hover {
-  background-color: #218838;
-  border-color: #1e7e34;
-}
+          <div class="form-group">
+            <button class="btn btn-success btn-lg" type="submit" [disabled]="form.invalid">
+              <i class="fa fa-database"></i> Create/Update Department
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
