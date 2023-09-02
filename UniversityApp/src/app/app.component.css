@@ -12,11 +12,9 @@
 }
 
 .footer{
-<<<<<<< HEAD
     position: inserit;
     margin-top: 8%;
     height:5%;
-=======
     /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
@@ -26,5 +24,4 @@
     left: 0;
     right: 0;
     width: 100%;
->>>>>>> bf69ab06d16856f35f3326bd691c4491d6d01c57
 }
