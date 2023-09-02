@@ -8,6 +8,10 @@ import { FacultyDashboardComponent } from './faculty/dashboard/dashboard.compone
 import { AdminDashboardComponent } from './admin/dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StudentPersonalinfoComponent } from './student/personalinfo/personalinfo.component';
+import { StudentCourseComponent } from './student/course/course.component';
+import { StudentAttendanceComponent } from './student/attendance/attendance.component';
+import { StudentFeeComponent } from './student/fee/fee.component';
 import { AdminPersonalInfoComponent } from './admin/personal-info/personal-info.component';
 import { BranchComponent } from './admin/branch/branch.component';
 import { AdminDepartmentComponent } from './admin/department/department.component';
@@ -27,6 +31,7 @@ import { StudentRegComponent } from './admin/student-reg/student-reg.component';
     FacultyDashboardComponent,
     AdminDashboardComponent,
     LoginComponent,
+<<<<<<< HEAD
     AdminPersonalInfoComponent,
     BranchComponent,
     AdminDepartmentComponent,
@@ -38,6 +43,13 @@ import { StudentRegComponent } from './admin/student-reg/student-reg.component';
     CourseRegComponent,
     FacultyRegComponent,
     StudentRegComponent
+=======
+    StudentPersonalinfoComponent,
+    StudentCourseComponent,
+    StudentAttendanceComponent,
+    StudentFeeComponent,
+    AdminPersonalInfoComponent
+>>>>>>> origin/basu
   ],
   imports: [
     BrowserModule,

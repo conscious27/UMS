@@ -1,6 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* Monochrome Body */
 /* body {
+=======
+/*  Monochrome Body*/
+body {
+>>>>>>> origin/basu
     background-color: #f5f5f5;
     color: #333333;
 }*/
@@ -176,6 +181,7 @@ h2{
 }
 
 /* Responsive Styles */
+<<<<<<< HEAD
 @media (max-width: 768px) {
     Adjust styles for smaller screens
     .container {
@@ -183,3 +189,12 @@ h2{
     }
 }
 >>>>>>> origin/khushiD
+=======
+ @media (max-width: 768px) {
+     Adjust styles for smaller screens 
+     .container {
+        padding: 20px;
+    }
+} 
+
+>>>>>>> origin/basu
