@@ -11469,40 +11469,24 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\chait\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
-=======
-    "C:\\Users\\ACER\\.nuget\\packages\\": {}
->>>>>>> origin/basu
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "D:\\Project Genpact\\UMS\\UniversityAPI\\UniversityAPI\\UniversityAPI.csproj",
       "projectName": "UniversityAPI",
       "projectPath": "D:\\Project Genpact\\UMS\\UniversityAPI\\UniversityAPI\\UniversityAPI.csproj",
       "packagesPath": "C:\\Users\\chait\\.nuget\\packages\\",
       "outputPath": "D:\\Project Genpact\\UMS\\UniversityAPI\\UniversityAPI\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\ACER\\OneDrive\\Documents\\Final Project Genpact\\UMS\\UMS\\UniversityAPI\\UniversityAPI\\UniversityAPI.csproj",
-      "projectName": "UniversityAPI",
-      "projectPath": "C:\\Users\\ACER\\OneDrive\\Documents\\Final Project Genpact\\UMS\\UMS\\UniversityAPI\\UniversityAPI\\UniversityAPI.csproj",
-      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ACER\\OneDrive\\Documents\\Final Project Genpact\\UMS\\UMS\\UniversityAPI\\UniversityAPI\\obj\\",
->>>>>>> origin/basu
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\chait\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> origin/basu
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11574,20 +11558,8 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
->>>>>>> origin/basu
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file D:\\Project Genpact\\UMS\\UniversityAPI\\UniversityAPI\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

@@ -1,0 +1,28 @@
+<div class="container Available_Courses">
+    <h1>Faculty Assigned</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Faculty ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">Email</th>
+                <th scope="col">Course Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let f of facultyForSelectedCourses">
+                <td>{{f.FacultyId}}</td>
+                <td>{{f.FirstName}}</td>
+                <td>{{f.LastName}}</td>
+                <td>{{f.Gender}}</td>
+                <td>{{f.ContactNumber}}</td>
+                <td>{{f.Email}}</td>
+                <td>{{f.CourseName}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

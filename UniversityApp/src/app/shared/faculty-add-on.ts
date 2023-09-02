@@ -5,6 +5,8 @@ export class FacultyAddOn {
     Gender;
     ContactNumber;
     Email;
+    DepartmentId;
     DepartmentName;
+    CourseId;
     CourseName;
 }

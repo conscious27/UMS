@@ -23,6 +23,9 @@ import { BranchRegComponent } from './admin/branch-reg/branch-reg.component';
 import { CourseRegComponent } from './admin/course-reg/course-reg.component';
 import { FacultyRegComponent } from './admin/faculty-reg/faculty-reg.component';
 import { StudentRegComponent } from './admin/student-reg/student-reg.component';
+import { StudentFacultyComponent } from './student/faculty/faculty.component';
+import { RegCourseComponent } from './student/reg-course/reg-course.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,6 @@ import { StudentRegComponent } from './admin/student-reg/student-reg.component';
     FacultyDashboardComponent,
     AdminDashboardComponent,
     LoginComponent,
-<<<<<<< HEAD
     AdminPersonalInfoComponent,
     BranchComponent,
     AdminDepartmentComponent,
@@ -42,20 +44,21 @@ import { StudentRegComponent } from './admin/student-reg/student-reg.component';
     BranchRegComponent,
     CourseRegComponent,
     FacultyRegComponent,
-    StudentRegComponent
-=======
+    StudentRegComponent,
     StudentPersonalinfoComponent,
     StudentCourseComponent,
     StudentAttendanceComponent,
     StudentFeeComponent,
-    AdminPersonalInfoComponent
->>>>>>> origin/basu
+    AdminPersonalInfoComponent,
+    StudentFacultyComponent,
+    RegCourseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    DatePipe
   ],
   providers: [],
   bootstrap: [AppComponent]

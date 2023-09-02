@@ -149,6 +149,32 @@ namespace UniversityAPI.Controllers
             return Ok(courses);
         }
 
+        [HttpGet("GetAllCourses/{id}")]
+        public async Task<ActionResult<List<CourseAddOn>>> GetAllCourses(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return BadRequest("Invalid 'id' parameter");
+            }
+
+            var courses = await _context.Courses
+                .Where(cr => cr.DepartmentId == id)
+                .Select(cr => new CourseAddOn
+                {
+                    CourseId = cr.CourseId,
+                    CourseCode = cr.CourseCode,
+                    CourseName = cr.CourseName,
+                    DepartmentName = cr.Department.DepartmentName,
+                    Credits = cr.Credits,
+                    Syllabus = cr.Syllabus,
+                    Description = cr.Description
+                })
+                    .ToListAsync();
+
+
+            return Ok(courses);
+        }
+
 
 
         [HttpGet("count")]

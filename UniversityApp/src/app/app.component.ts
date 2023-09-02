@@ -45,5 +45,7 @@ export class AppComponent implements OnInit {
     this.auth.logout();
   }
 
+  title:any = 'UniversityApp'
+
   // title = 'UniversityApp';
 }

@@ -19,6 +19,8 @@ import { BranchRegComponent } from './admin/branch-reg/branch-reg.component';
 import { CourseRegComponent } from './admin/course-reg/course-reg.component';
 import { FacultyRegComponent } from './admin/faculty-reg/faculty-reg.component';
 import { StudentRegComponent } from './admin/student-reg/student-reg.component';
+import { StudentFacultyComponent } from './student/faculty/faculty.component';
+import { RegCourseComponent } from './student/reg-course/reg-course.component';
 
 
 const routes: Routes = [
@@ -27,7 +29,6 @@ const routes: Routes = [
   {path:'student_dashboard', component:StudentDashboardComponent},
   {path:'admin_dashboard', component:AdminDashboardComponent},
   {path:'faculty_dashboard', component:FacultyDashboardComponent},
-<<<<<<< HEAD
   {path:'admin_personalInfo', component:AdminPersonalInfoComponent},
   {path:'admin_DepartmentInfo', component:AdminDepartmentComponent},
   {path:'admin_BranchInfo', component:BranchComponent},
@@ -39,14 +40,14 @@ const routes: Routes = [
   {path:'branchReg', component:BranchRegComponent},
   {path:'courseReg', component:CourseRegComponent},
   {path:'facultyReg', component:FacultyRegComponent},
-  {path:'studentReg', component:StudentRegComponent}
-=======
+  {path:'studentReg', component:StudentRegComponent},
   {path:'student_personalInfo', component:StudentPersonalinfoComponent},
   {path:'student_course',component:StudentCourseComponent},
   {path:'student_attendance',component:StudentAttendanceComponent},
   {path:'student_fee',component:StudentFeeComponent},
-  {path:'admin_personalInfo', component:AdminPersonalInfoComponent}
->>>>>>> origin/basu
+  {path:'admin_personalInfo', component:AdminPersonalInfoComponent},
+  {path:'student_faculty', component:StudentFacultyComponent},
+  {path:'student_courseReg', component:RegCourseComponent}
 ];
 
 @NgModule({

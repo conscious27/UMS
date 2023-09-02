@@ -51,4 +51,5 @@ public partial class Student
     public virtual Department? Department { get; set; } = null!;
 
     public virtual ICollection<Result> Results { get; set; } = new List<Result>();
+    public virtual ICollection<CourseReg> CourseRegs { get; set; } = new List<CourseReg>();
 }

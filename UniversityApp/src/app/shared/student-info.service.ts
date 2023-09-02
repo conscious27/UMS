@@ -12,6 +12,7 @@ export class StudentInfoService {
   readonly StudentUrl = 'http://localhost:5175/api/Students';
   StudentList: StudentInfo[];
   StudentAddOnList : StudentAddOn[];
+  StudentAddOnData: StudentAddOn = new StudentAddOn();
   constructor(private objHttp: HttpClient) { }
 
   postStudentInfo() {
@@ -19,6 +20,12 @@ export class StudentInfoService {
   }
   getStudentInfoList() {
     return this.objHttp.get(this.StudentUrl).toPromise().then(res => this.StudentList = res as StudentInfo[]);
+  }
+  getStudentInfo(id){
+    return this.objHttp.get(this.StudentUrl+ "/" + id).toPromise().then(res => this.StudentData = res as StudentInfo);
+  }
+  getStudentAddOnById(id){
+    return this.objHttp.get(this.StudentUrl+ "/StudentAddOnById/" + id);
   }
   delStudentInfo(id) {
     return this.objHttp.delete(this.StudentUrl + "/" + id);
@@ -29,7 +36,6 @@ export class StudentInfoService {
   countStudent() {
     return this.objHttp.get(this.StudentUrl + "/count");
   }
-
   getStudentsAddOn(){
     return this.objHttp.get(this.StudentUrl + "/StudentAddOn").toPromise().then(res => this.StudentAddOnList = res as StudentAddOn[]);
   }

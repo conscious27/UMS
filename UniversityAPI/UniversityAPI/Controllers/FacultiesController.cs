@@ -141,7 +141,9 @@ namespace UniversityAPI.Controllers
                     Gender = f.Gender,
                     ContactNumber = f.ContactNumber,
                     Email = f.Email,
+                    DepartmentId = f.DepartmentId,
                     DepartmentName = f.Department.DepartmentName,
+                    CourseId = f.CourseId,
                     CourseName = f.Course.CourseName
                 })
                     .ToListAsync();
