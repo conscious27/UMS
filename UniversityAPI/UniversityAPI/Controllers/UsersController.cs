@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -27,7 +28,7 @@ namespace UniversityAPI.Controllers
         }
 
         // GET: api/Users
-        [HttpGet]
+        [HttpGet, Authorize(Roles = "Admin")]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
           if (_context.Users == null)
@@ -148,7 +149,8 @@ namespace UniversityAPI.Controllers
             List<Claim> claims = new List<Claim>()
             {
                 new Claim("AdminId", loginModel.UserID),
-                new Claim("Role", loginModel.UserType)
+                new Claim("Role", loginModel.UserType),
+                new Claim(ClaimTypes.Role, loginModel.UserType)
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(

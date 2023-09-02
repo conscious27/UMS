@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "95E+sK3s9QOWMMVv750KJWMmN2R5BLKPOwyjkjQcAi3pw39nHAXB4A4B14dpZ1na61z0jWwlhukz136gytE2ow==",
+  "dgSpecHash": "010A8ezq0UdnlOIeKrtyLdDszv4Q0pyLQyyhkGGEIBdKAmrNkIVdqysD0KZslXF++vO0flixlq+l/ir5FOlULA==",
   "success": true,
   "projectFilePath": "D:\\Project Genpact\\UMS\\UniversityAPI\\UniversityAPI\\UniversityAPI.csproj",
   "expectedPackageFiles": [
@@ -60,6 +60,7 @@
     "C:\\Users\\chait\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\chait\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\chait\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
+    "C:\\Users\\chait\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.0\\microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512",
     "C:\\Users\\chait\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "C:\\Users\\chait\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\chait\\.nuget\\packages\\microsoft.build\\17.3.2\\microsoft.build.17.3.2.nupkg.sha512",
