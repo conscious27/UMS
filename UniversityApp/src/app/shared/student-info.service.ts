@@ -21,10 +21,10 @@ export class StudentInfoService {
     return this.objHttp.get(this.StudentUrl).toPromise().then(res => this.StudentList = res as StudentInfo[]);
   }
   delStudentInfo(id) {
-    this.objHttp.delete(this.StudentUrl + "/" + id);
+    return this.objHttp.delete(this.StudentUrl + "/" + id);
   }
   putStudentInfo() {
-    this.objHttp.put(this.StudentUrl + "/" + this.StudentData.StudentId, this.StudentData);
+    return this.objHttp.put(this.StudentUrl + "/" + this.StudentData.StudentId, this.StudentData);
   }
   countStudent() {
     return this.objHttp.get(this.StudentUrl + "/count");
