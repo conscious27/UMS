@@ -85,6 +85,35 @@
 
 
 <!-- FACULTY DASHBOARD -->
+<div *ngIf="navBarService.navBarMode === 'STUDENT'">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" routerLink = "/student_dashboard">Faculty Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/student_dashboard">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/student_faculty">Students</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="">Examination</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/student_personalInfo">User</a>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" type="button" (click)="Logout()">Logout</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
 
 <!-- Main Panel -->
 <div class="main">
