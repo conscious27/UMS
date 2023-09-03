@@ -129,6 +129,38 @@ namespace UniversityAPI.Controllers
             return NoContent();
         }
 
+        [HttpGet("FacultyAddOn")]
+        public async Task<ActionResult<List<FacultyAddOn>>> GetFacultyAddOn()
+        {
+            var faculties = await _context.Faculties
+                .Select(f => new FacultyAddOn
+                {
+                    FacultyId = f.FacultyId,
+                    FirstName =  f.FirstName,
+                    LastName = f.LastName,
+                    Gender = f.Gender,
+                    ContactNumber = f.ContactNumber,
+                    Email = f.Email,
+                    DepartmentId = f.DepartmentId,
+                    DepartmentName = f.Department.DepartmentName,
+                    CourseId = f.CourseId,
+                    CourseName = f.Course.CourseName
+                })
+                    .ToListAsync();
+
+
+            return Ok(faculties);
+        }
+
+
+
+        [HttpGet("count")]
+        public async Task<IActionResult> GetFacultyCount()
+        {
+            var count = await _context.Faculties.CountAsync();
+            return Ok(count);
+        }
+
         private bool FacultyExists(string id)
         {
             return (_context.Faculties?.Any(e => e.FacultyId == id)).GetValueOrDefault();

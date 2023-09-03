@@ -1,0 +1,27 @@
+.header{
+    background-image: var(--bs-gradient);
+}
+
+.main{
+    /* background-color: whitesmoke; */
+    height: 1000px;
+    background-image: url('src\images\university.jpg');
+    background-size: 1920px 1080px;
+    background-repeat: no-repeat;
+    
+}
+
+.footer{
+    position: inserit;
+    margin-top: 8%;
+    height:5%;
+    /* min-height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    background-color: azure;
+    color: black;
+    text-align: center;
+    left: 0;
+    right: 0;
+    width: 100%;
+}

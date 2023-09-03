@@ -49,6 +49,7 @@ namespace UniversityAPI.Controllers
             return student;
         }
 
+
         // PUT: api/Students/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -127,6 +128,75 @@ namespace UniversityAPI.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
+        }
+
+        [HttpGet("StudentAddOn")]
+        public async Task<ActionResult<List<StudentAddOn>>> GetStudentAddOn()
+        {
+            var students = await _context.Students
+                .Select(s => new StudentAddOn
+                {
+                    StudentId = s.StudentId,
+                    FirstName = s.FirstName,
+                    LastName = s.LastName,
+                    Gender = s.Gender,
+                    ContactNumber = s.ContactNumber,
+                    Email = s.Email,
+                    DateOfBirth = s.DateOfBirth,
+                    DepartmentName = s.Department.DepartmentName,
+                    BranchName = s.Branch.BranchName,
+                    EnrollmentDate = s.EnrollmentDate,
+                    Saddress = s.Saddress,
+                    Semester = s.Semester
+                })
+                    .ToListAsync();
+
+
+            return Ok(students);
+        }
+
+        [HttpGet("StudentAddOnById/{id}")]
+        public async Task<ActionResult<List<StudentAddOn>>> GetStudentAddOnById(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return BadRequest("Student id is not provided.");
+            }
+
+            var student = await _context.Students
+                .Where(s => s.StudentId == id)
+                .Select(s => new StudentAddOn
+                {
+                    StudentId = s.StudentId,
+                    FirstName = s.FirstName,
+                    LastName = s.LastName,
+                    Gender = s.Gender,
+                    ContactNumber = s.ContactNumber,
+                    Email = s.Email,
+                    DateOfBirth = s.DateOfBirth,
+                    DepartmentName = s.Department.DepartmentName,
+                    BranchName = s.Branch.BranchName,
+                    EnrollmentDate = s.EnrollmentDate,
+                    Saddress = s.Saddress,
+                    Semester = s.Semester
+                })
+                .FirstOrDefaultAsync();
+
+            if (student == null)
+            {
+                return NotFound("Student not found.");
+            }
+
+            return Ok(student);
+        }
+
+
+
+        [HttpGet("count")]
+        public async Task<IActionResult> GetStudentCount()
+        {
+            var count = await _context.Students.CountAsync();
+            return Ok(count);
         }
 
         private bool StudentExists(string id)

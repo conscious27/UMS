@@ -1,0 +1,105 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="CourseId.valid"
+                        [class.red-icon]="CourseId.invalid && CourseId.touched"></i>
+                    <input name="CourseId" #CourseId="ngModel" [(ngModel)]="objService.CourseData.CourseId"
+                        placeholder="Course Id" class="form-control" required>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="CourseCode.valid"
+                        [class.red-icon]="CourseCode.invalid && CourseCode.touched"></i>
+                    <input name="CourseCode" #CourseCode="ngModel" [(ngModel)]="objService.CourseData.CourseCode"
+                        placeholder="Course Code" class="form-control" required>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="CourseName.valid"
+                        [class.red-icon]="CourseName.invalid && CourseName.touched"></i>
+                    <input name="CourseName" #CourseName="ngModel" [(ngModel)]="objService.CourseData.CourseName"
+                        placeholder="Course Name" class="form-control" required>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="Credits.valid"
+                        [class.red-icon]="Credits.invalid && Credits.touched"></i>
+                    <input name="Credits" #Credits="ngModel" [(ngModel)]="objService.CourseData.Credits"
+                        placeholder="Credits" class="form-control" required>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="DepartmentId.valid"
+                        [class.red-icon]="DepartmentId.invalid && DepartmentId.touched"></i>
+                    <select name="DepartmentId" #DepartmentId="ngModel" id="DepartmentId"
+                        [(ngModel)]="objService.CourseData.DepartmentId" class="form-control" required>
+                        <option *ngFor="let department of depService.depList" [value]="department.DepartmentId">{{
+                            department.DepartmentName }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="Syllabus.valid"
+                        [class.red-icon]="Syllabus.invalid && Syllabus.touched"></i>
+                    <input name="Syllabus" #Syllabus="ngModel" [(ngModel)]="objService.CourseData.Syllabus"
+                        placeholder="Syllabus" class="form-control" required>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="Description.valid"
+                        [class.red-icon]="Description.invalid && Description.touched"></i>
+                    <input name="Description" #Description="ngModel" [(ngModel)]="objService.CourseData.Description"
+                        placeholder="Description" class="form-control" required>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <button class="btn btn-success btn-lg" type="submit" [disabled]="form.invalid">
+            <i class="fa fa-database"></i> Create/Update Course </button>
+    </div>
+
+
+</form>

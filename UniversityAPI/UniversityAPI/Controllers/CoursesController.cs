@@ -129,6 +129,61 @@ namespace UniversityAPI.Controllers
             return NoContent();
         }
 
+        [HttpGet("CourseAddOn")]
+        public async Task<ActionResult<List<CourseAddOn>>> GetCoursesAddOn()
+        {
+            var courses = await _context.Courses
+                .Select(c => new CourseAddOn
+                {
+                    CourseId = c.CourseId,
+                    CourseCode = c.CourseCode,
+                    CourseName = c.CourseName,
+                    Credits = c.Credits,
+                    DepartmentName = c.Department.DepartmentName,
+                    Syllabus = c.Syllabus,
+                    Description = c.Description
+                })
+                    .ToListAsync();
+
+
+            return Ok(courses);
+        }
+
+        [HttpGet("GetAllCourses/{id}")]
+        public async Task<ActionResult<List<CourseAddOn>>> GetAllCourses(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return BadRequest("Invalid 'id' parameter");
+            }
+
+            var courses = await _context.Courses
+                .Where(cr => cr.DepartmentId == id)
+                .Select(cr => new CourseAddOn
+                {
+                    CourseId = cr.CourseId,
+                    CourseCode = cr.CourseCode,
+                    CourseName = cr.CourseName,
+                    DepartmentName = cr.Department.DepartmentName,
+                    Credits = cr.Credits,
+                    Syllabus = cr.Syllabus,
+                    Description = cr.Description
+                })
+                    .ToListAsync();
+
+
+            return Ok(courses);
+        }
+
+
+
+        [HttpGet("count")]
+        public async Task<IActionResult> GetCourseCount()
+        {
+            var count = await _context.Courses.CountAsync();
+            return Ok(count);
+        }
+
         private bool CourseExists(string id)
         {
             return (_context.Courses?.Any(e => e.CourseId == id)).GetValueOrDefault();

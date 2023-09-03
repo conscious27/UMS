@@ -1,0 +1,48 @@
+<div class="container RegisteredCourses">
+    <h1>Registered Courses</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Course ID</th>
+                <th scope="col">Course Code</th>
+                <th scope="col">Course Name</th>
+                <th scope="col">Credits</th>
+                <th scope="col">Syllabus</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of courseRegService.CourseRegAddOnList;">
+                <td>{{c.CourseId}}</td> 
+                <td>{{c.CourseCode}}</td>
+                <td >{{c.CourseName}}</td>
+                <td>{{c.Credits}}</td> 
+                <td>{{c.Syllabus}}</td>
+                <td >{{c.Description}}</td>
+            </tr>
+        </tbody>
+      </table>
+</div>
+
+<div class="ExamResult container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Examination ID</th>
+                <th scope="col">Marks Obtained</th>
+                <th scope="col">Grade Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr *ngFor="let c of objs.CourseAddOnList;">
+                <td>{{r.ExamId}}</td> 
+                <td>{{r.MarksObtained}}</td>
+                <td >{{r.Grade}}</td>
+            </tr> -->
+        </tbody>
+      </table>
+</div>
+
+<div class="StudentInfo container">
+
+</div>

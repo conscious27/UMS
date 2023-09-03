@@ -129,6 +129,13 @@ namespace UniversityAPI.Controllers
             return NoContent();
         }
 
+        [HttpGet("count")]
+        public async Task<IActionResult> GetDepartmentCount()
+        {
+            var count = await _context.Departments.CountAsync();
+            return Ok(count);
+        }
+
         private bool DepartmentExists(string id)
         {
             return (_context.Departments?.Any(e => e.DepartmentId == id)).GetValueOrDefault();

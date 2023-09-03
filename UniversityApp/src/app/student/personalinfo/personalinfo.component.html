@@ -1,0 +1,95 @@
+<div class="student-profile py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent text-center">
+            <img class="profile_img"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxb0YLGet-v8zNDbL6WVMSe8f4u1L-Ntdbc5obujE7&s"
+              alt="student dp">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0">
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+          </div>
+          <div class="card-body pt-0">
+            <table class="table table-bordered">
+              <tr>
+                <th width="30%">Student Id</th>
+                <td width="2%">:</td>
+                <td>{{ this.studentService.StudentAddOnData.StudentId }}</td>
+              </tr>
+              <tr>
+                <th width="30%">First Name</th>
+                <td width="2%">:</td>
+                <td>{{ this.studentService.StudentAddOnData.FirstName  }}</td>
+              </tr>
+              <tr>
+                <th width="30%">Last Name</th>
+                <td width="2%">:</td>
+                <td>{{ this.studentService.StudentAddOnData.LastName  }}</td>
+              </tr>
+              <tr>
+                <th width="30%">Gender</th>
+                <td width="2%">:</td>
+                <td>{{ this.studentService.StudentAddOnData.Gender  }}</td>
+              </tr>
+              <tr>
+                <th width="30%">Contact Number</th>
+                <td width="2%">:</td>
+                <td>{{ this.studentService.StudentAddOnData.ContactNumber  }}</td>
+              </tr>
+              <tr>
+                <th width="30%">Email</th>
+                <td width="2%">:</td>
+                <td>{{ this.studentService.StudentAddOnData.Email  }}</td>
+              </tr>
+              <tr>
+                <th width="30%">Date of Birth</th>
+                <td width="2%">:</td>
+                <td>{{ this.studentService.StudentAddOnData.DateOfBirth  }}</td>
+              </tr>
+              <tr>
+                <th width="30%">Department Name</th>
+                <td width="2%">:</td>
+                <td>{{ this.studentService.StudentAddOnData.DepartmentName  }}</td>
+              </tr>
+              <tr>
+                <th width="30%">Branch Name</th>
+                <td width="2%">:</td>
+                <td>{{ this.studentService.StudentAddOnData.BranchName  }}</td>
+              </tr>
+              <tr>
+                <th width="30%">Enrollment Date</th>
+                <td width="2%">:</td>
+                <td>{{ this.studentService.StudentAddOnData.EnrollmentDate  }}</td>
+              </tr>
+              <tr>
+                <th width="30%">Student Address</th>
+                <td width="2%">:</td>
+                <td>{{ this.studentService.StudentAddOnData.Saddress  }}</td>
+              </tr>
+              <tr>
+                <th width="30%">Contact Number</th>
+                <td width="2%">:</td>
+                <td>{{ this.studentService.StudentAddOnData.Semester  }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div style="height: 26px"></div>
+        <!-- <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0">
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Other Information</h3>
+          </div>
+          <div class="card-body pt-0">
+            <p>Add details here!</p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

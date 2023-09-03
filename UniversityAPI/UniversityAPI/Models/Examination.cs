@@ -24,7 +24,7 @@ public partial class Examination
     [RegularExpression(@"^(Final|Midterm|Other)$", ErrorMessage = "Invalid Gender")]
     public string? Type { get; set; }
 
-    public virtual Course Course { get; set; } = null!;
+    public virtual Course? Course { get; set; } = null!;
 
     public virtual ICollection<Result> Results { get; set; } = new List<Result>();
 }

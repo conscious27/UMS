@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using UniversityAPI.Models;
 
 namespace UniversityAPI.Models;
 
@@ -36,10 +37,11 @@ public partial class UniversityDbContext : DbContext
     public virtual DbSet<Student> Students { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
+    public virtual DbSet<CourseReg> CourseReg { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("server=DESKTOP-MFEN465;database=UniversityDb;trusted_connection=true;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("server=localhost;database=UniversityDb;trusted_connection=true;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -105,6 +107,34 @@ public partial class UniversityDbContext : DbContext
                 .HasForeignKey(d => d.DepartmentId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Branch__Departme__4222D4EF");
+        });
+
+        modelBuilder.Entity<CourseReg>(entity =>
+        {
+            entity.HasKey(e => new { e.StudentId, e.CourseId }).HasName("PK__courseRe__5E57FC8390D1D70C");
+
+            entity.ToTable("courseReg");
+
+            entity.Property(e => e.StudentId)
+                .HasMaxLength(5)
+                .HasColumnName("StudentID");
+            entity.Property(e => e.CourseId)
+                .HasMaxLength(5)
+                .HasColumnName("CourseID");
+            entity.Property(e => e.DateOfReg)
+                .HasColumnType("date")
+                .HasColumnName("DateOfReg");
+
+
+            entity.HasOne(d => d.Course).WithMany(p => p.CourseRegs)
+                .HasForeignKey(d => d.CourseId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__courseReg__Cours__03F0984C");
+
+            entity.HasOne(d => d.Student).WithMany(p => p.CourseRegs)
+                .HasForeignKey(d => d.StudentId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__courseReg__Stude__02FC7413");
         });
 
         modelBuilder.Entity<Course>(entity =>
@@ -291,8 +321,13 @@ public partial class UniversityDbContext : DbContext
             entity.Property(e => e.Username).HasMaxLength(50);
         });
 
+
+        
+
         OnModelCreatingPartial(modelBuilder);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+    
 }

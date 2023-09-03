@@ -1,0 +1,28 @@
+<div><button type="button" (click)="createNew()" routerLink="/departmentReg">Create New</button></div>
+
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">DepartmentID</th>
+            <th scope="col">Department Name</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of objs.depList">
+            <td>{{d.DepartmentId}}</td> 
+            <td>{{d.DepartmentName}}</td>
+            <td>{{d.ContactNumber}}</td>
+            <td>
+                <button type="button" id="viewDepartment" routerLink="/departmentReg" (click)="fillForm(d)">Edit</button>
+            </td>
+            <td>
+                <button type="button" id="viewDepartment" (click)="onDelete(d.DepartmentId)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

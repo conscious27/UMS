@@ -17,7 +17,7 @@ public partial class Result
     [RegularExpression(@"^(A|B|C|F)$", ErrorMessage = "Invalid Grade")]
     public string? Grade { get; set; }
 
-    public virtual Examination Exam { get; set; } = null!;
+    public virtual Examination? Exam { get; set; } = null!;
 
-    public virtual Student Student { get; set; } = null!;
+    public virtual Student? Student { get; set; } = null!;
 }

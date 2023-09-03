@@ -1,0 +1,57 @@
+<div class="Admin-personal-info py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent text-center">
+            <img class="profile_img"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxb0YLGet-v8zNDbL6WVMSe8f4u1L-Ntdbc5obujE7&s"
+              alt="student dp">
+            <!-- <h3>Basu</h3> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0">
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Personal Information</h3>
+          </div>
+          <div class="card-body pt-0">
+            <table class="table table-bordered">
+              <tr>
+                <th width="30%">Admin ID</th>
+                <td width="2%">:</td>
+                <td> {{ this.adminService.AdminData.AdminId }}</td>
+              </tr>
+              <tr>
+                <th width="30%">FirstName </th>
+                <td width="2%">:</td>
+                <td>{{ this.adminService.AdminData.FirstName }}</td>
+              </tr>
+              <tr>
+                <th width="30%">LastName</th>
+                <td width="2%">:</td>
+                <td>{{ this.adminService.AdminData.LastName }}</td>
+              </tr>
+              <tr>
+                <th width="30%">Gender</th>
+                <td width="2%">:</td>
+                <td>{{ this.adminService.AdminData.Gender }}</td>
+              </tr>
+              <tr>
+                <th width="30%">Contact</th>
+                <td width="2%">:</td>
+                <td>{{ this.adminService.AdminData.ContactNumber }}</td>
+              </tr>
+              <tr>
+                <th width="30%">Email</th>
+                <td width="2%">:</td>
+                <td>{{ this.adminService.AdminData.Email }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

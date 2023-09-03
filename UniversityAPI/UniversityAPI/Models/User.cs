@@ -10,7 +10,7 @@ public partial class User
     [StringLength(5, ErrorMessage = "AdminID Length Cannot Exceeds 5 Character")]
     public string UserId { get; set; } = null!;
     [Required(ErrorMessage = "User Name is Required")]
-    [StringLength(50, ErrorMessage = "UserName Length Cannot Exceeds 50 Characters")]
+    [StringLength(int.MaxValue, ErrorMessage = "Length Exceeds")]
     public string Username { get; set; } = null!;
     [Required(ErrorMessage = "Password is Required")]
     [DataType(DataType.Password)]

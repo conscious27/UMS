@@ -1,0 +1,45 @@
+<!-- Page content
+<div class="container mt-5 login">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="mb-4">University Login</h2>
+            <form>
+                <div>
+                    <label for="userID" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="userID" required>
+                </div>
+                <div>
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <div>
+                    <label for="userType" class="form-label">User Type</label>
+                    <select class="form-select" id="userType" required>
+                        <option value="">Select User Type</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Student">Student</option>
+                        <option value="Faculty">Faculty</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-dark" (click)="Authentication()">Login</button>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+<div class="login-page">
+    <div class="form">
+      <form class="login-form">
+        <input type="text" placeholder="user ID" id="userID" />
+        <input type="password" placeholder="password" id="password"/>
+        <div class="select">        <select type="userType" placeholder="userType" id="userType" >
+            <option value="">Select User Type</option>
+            <option value="Admin">Admin</option>
+            <option value="Student">Student</option>
+            <option value="Faculty">Faculty</option>
+        </select></div>
+
+        <button (click)="Authentication()">login</button>
+      </form>
+    </div>
+  </div>

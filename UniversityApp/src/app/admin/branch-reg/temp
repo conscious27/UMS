@@ -1,0 +1,132 @@
+/* Apply your custom CSS styles here */
+
+/* Style for the registration box */
+.registration-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-top: 30px;
+}
+
+/* Style for form labels */
+.registration-box label {
+  font-weight: bold;
+}
+
+/* Style for input icons */
+.registration-box .input-group-text {
+  border-radius: 0; /* Remove border-radius */
+}
+
+/* Style for green and red icons */
+.registration-box .green-icon {
+  color: green;
+}
+
+.registration-box .red-icon {
+  color: red;
+}
+
+/* Style for submit button */
+.registration-box .btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.registration-box .btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+****************************************************************************************
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Your Page Title</title>
+  <!-- Add the CSS link below -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="registration-box"> <!-- Container for the registration box -->
+          <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+            <!-- Registration fields container -->
+            <div class="registration-fields">
+              <div class="form-group">
+                <label for="DepartmentId">Department Id</label>
+                <div class="input-group">
+                  <!-- Field 1 -->
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="DepartmentName">Department Name</label>
+                <div class="input-group">
+                  <!-- Field 2 -->
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="ContactNumber">Contact Number</label>
+                <div class="input-group">
+                  <!-- Field 3 -->
+                </div>
+              </div>
+            </div>
+            <!-- End of registration fields container -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+***********************************************css**************************
+/* Apply your custom CSS styles here */
+
+/* Style for the registration box */
+.registration-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-top: 30px;
+}
+
+/* Style for form labels */
+.registration-box label {
+  font-weight: bold;
+}
+
+/* Style for input icons */
+.registration-box .input-group-text {
+  border-radius: 0; /* Remove border-radius */
+}
+
+/* Style for green and red icons */
+.registration-box .green-icon {
+  color: green;
+}
+
+.registration-box .red-icon {
+  color: red;
+}
+
+/* Style for submit button */
+.registration-box .btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.registration-box .btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+/* Style for the registration fields container */
+.registration-fields {
+  margin-top: 20px; /* Adjust the margin as needed */
+}
