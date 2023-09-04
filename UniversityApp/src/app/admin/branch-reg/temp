@@ -1,0 +1,59 @@
+/* Add your custom styles here */
+
+/* Style for the form container */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Style for form groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Style for input icons */
+.input-group-text {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+/* Style for valid input icons */
+.green-icon {
+  color: green;
+}
+
+/* Style for invalid input icons */
+.red-icon {
+  color: red;
+}
+
+/* Style for input fields */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style for the submit button */
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-success:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Additional styles for select element */
+select.form-control {
+  cursor: pointer;
+}
+
+/* Add more custom styles as needed */
+

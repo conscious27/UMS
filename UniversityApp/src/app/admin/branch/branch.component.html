@@ -1,0 +1,26 @@
+<div><button type="button"  class="btn btn-success" (click)="createNew()" routerLink="/branchReg">Create New</button></div>
+
+<table class="table table-hover">
+  <thead>
+      <tr  class="table-warning">
+          <th scope="col">BranchID</th>
+          <th scope="col">Branch Name</th>
+          <th scope="col">Department Name</th>
+          <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+      </tr>
+  </thead>
+  <tbody class="table-group-divider">
+      <tr *ngFor="let b of objs.branchWithDepList; let i=index">
+          <td class="align-middle">{{b.BranchId}}</td> 
+          <td class="align-middle">{{b.BranchName}}</td>
+          <td  class="align-middle">{{b.DepartmentName}}</td>
+          <td>
+              <button type="button" class="btn btn-outline-primary" id="EditBranch" (click)="fillForm(objs.branchList[i])" routerLink="/branchReg">Edit</button>
+          </td>
+          <td>
+              <button type="button" class="btn btn-outline-danger" id="DeleteBranch" (click)="onDelete(b.BranchId)">Delete</button>
+          </td>
+      </tr>
+  </tbody>
+</table>

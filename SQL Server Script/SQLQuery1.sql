@@ -91,5 +91,5 @@ Email nvarchar(255) check (Email like '%_@%._%'))
 create table Users
 (UserID nvarchar(5) primary key,
 Username nvarchar(50) not null,
-Password nvarchar(50) not null,
+Password nvarchar(MAX) not null,
 Role nvarchar(20) check (Role in ('Student', 'Faculty', 'Admin')))

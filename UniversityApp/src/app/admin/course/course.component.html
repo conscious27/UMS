@@ -1,0 +1,35 @@
+<div><button type="button" class="btn btn-success" (click)="createNew()" routerLink="/courseReg">Create New</button></div>
+
+<table class="table table-hover">
+    <thead>
+        <tr class="table-warning">
+            <th scope="col">Course ID</th>
+            <th scope="col" >Course Code</th>
+            <th  scope="col" >Course Name</th>
+            <th  scope="col" >Credits</th>
+            <th scope="col">Department Name</th>
+            <th scope="col">Syllabus</th>
+            <th scope="col">Description</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        <tr *ngFor="let c of objs.CourseAddOnList; let i = index">
+            <td class="align-middle">{{c.CourseId}}</td> 
+            <td class="align-middle">{{c.CourseCode}}</td>
+            <td class="align-middle">{{c.CourseName}}</td>
+            <td class="align-middle">{{c.Credits}}</td> 
+            <td class="align-middle">{{c.DepartmentName}}</td>
+            <td class="align-middle">{{c.Syllabus}}</td>
+            <td  class="align-middle">{{c.Description}}</td>
+            <td>
+                <button type="button" class="btn btn-outline-primary" id="EditCourse" (click)="fillForm(objs.CourseList[i])" routerLink="/courseReg">Edit</button>
+            </td>
+            <td >
+                <button type="button" class="btn btn-outline-danger" id="DeleteCourse" (click)="onDelete(c.CourseId)" routerLink="/admin_courseInfo">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+  

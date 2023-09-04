@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  
+  
+          <div class="form-group">
+            <label for="BranchId">Student Id</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white">
+                  <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="StudentId.valid"
+                    [class.red-icon]="StudentId.invalid && StudentId.touched"></i>
+                </span>
+              </div>
+              <input readonly name="StudentId" #StudentId="ngModel" [(ngModel)]="objService.CourseRegData.StudentId" id="StudentId"
+                class="form-control" placeholder="Student Id" required>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="CourseId.valid"
+                            [class.red-icon]="CourseId.invalid && CourseId.touched"></i>
+                        <select name="CourseId" #CourseId="ngModel" id="CourseId"
+                            [(ngModel)]="objService.CourseRegData.CourseId" class="form-control" required>
+                            <option *ngFor="let course of coursesNotChosen" [value]="course.CourseId">{{
+                              course.CourseName }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+
+          <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="DateOfReg.valid"
+                            [class.red-icon]="DateOfReg.invalid && DateOfReg.touched"></i>
+                        <input readonly type="date" name="DateOfReg" #DateOfReg="ngModel" [(ngModel)]="objService.CourseRegData.DateOfReg" placeholder="DateOfReg"
+                            class="form-control" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+          <div class="form-group">
+            <button class="btn btn-success btn-lg" type="submit" [disabled]="form.invalid">
+              <i class="fa fa-database"></i> Registered for Course
+            </button>
+          </div>
+  
+        </form>
+      </div>
+    </div>
+  </div>

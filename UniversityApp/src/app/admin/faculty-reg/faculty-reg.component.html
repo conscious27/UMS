@@ -1,0 +1,152 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+
+            <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+
+                <div class="form-group">
+                    <label for="BranchId">Faculty Id</label>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                                <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="FacultyId.valid"
+                                    [class.red-icon]="FacultyId.invalid && FacultyId.touched"></i>
+                                <input name="FacultyId" #FacultyId="ngModel"
+                                    [(ngModel)]="objService.FacultyData.FacultyId" placeholder="Faculty Id"
+                                    class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="BranchId">First Name</label>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                                <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="FirstName.valid"
+                                    [class.red-icon]="FirstName.invalid && FirstName.touched"></i>
+                                <input name="FirstName" #FirstName="ngModel"
+                                    [(ngModel)]="objService.FacultyData.FirstName" placeholder="First Name"
+                                    class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="BranchId">Last Name</label>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                                <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="LastName.valid"
+                                    [class.red-icon]="LastName.invalid && LastName.touched"></i>
+                                <input name="LastName" #LastName="ngModel" [(ngModel)]="objService.FacultyData.LastName"
+                                    placeholder="Last Name" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="BranchId">Gender</label>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                                <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="Gender.valid"
+                                    [class.red-icon]="Gender.invalid && Gender.touched"></i>
+                                <select name="Gender" #Gender="ngModel" [(ngModel)]="objService.FacultyData.Gender"
+                                    class="form-control" required>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="BranchId">Contact Number</label>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                                <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="ContactNumber.valid"
+                                    [class.red-icon]="ContactNumber.invalid && ContactNumber.touched"></i>
+                                <input name="ContactNumber" #ContactNumber="ngModel"
+                                    [(ngModel)]="objService.FacultyData.ContactNumber" placeholder="ContactNumber"
+                                    class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="BranchId">Email</label>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                                <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="Email.valid"
+                                    [class.red-icon]="Email.invalid && Email.touched"></i>
+                                <input name="Email" #Email="ngModel" [(ngModel)]="objService.FacultyData.Email"
+                                    placeholder="Email" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="BranchId">Department Name</label>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                                <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="DepartmentId.valid"
+                                    [class.red-icon]="DepartmentId.invalid && DepartmentId.touched"></i>
+                                <select name="DepartmentId" #DepartmentId="ngModel" id="DepartmentId"
+                                    [(ngModel)]="objService.FacultyData.DepartmentId" class="form-control" required>
+                                    <option *ngFor="let department of depService.depList"
+                                        [value]="department.DepartmentId">{{
+                                        department.DepartmentName }}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="BranchId">Course Name</label>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                                <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="CourseId.valid"
+                                    [class.red-icon]="CourseId.invalid && CourseId.touched"></i>
+                                <select name="CourseId" #CourseId="ngModel" id="CourseId"
+                                    [(ngModel)]="objService.FacultyData.CourseId" class="form-control" required>
+                                    <option *ngFor="let course of courseService.CourseList" [value]="course.CourseId">{{
+                                        course.CourseName }}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <button class="btn btn-success btn-lg" type="submit" [disabled]="form.invalid">
+                        <i class="fa fa-database"></i> Create/Update Faculty </button>
+                </div>
+
+
+            </form>
+
+        </div>
+    </div>
+</div>

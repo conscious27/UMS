@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class CourseReg {}","map":{"version":3,"names":["CourseReg"],"sources":["D:\\Project Genpact\\UMS\\UniversityApp\\src\\app\\shared\\course-reg.model.ts"],"sourcesContent":["export class CourseReg {\n    StudentId;\n    CourseId;\n    DateOfReg;\n}\n"],"mappings":"AAAA,OAAM,MAAOA,SAAS"},"metadata":{},"sourceType":"module","externalDependencies":[]}

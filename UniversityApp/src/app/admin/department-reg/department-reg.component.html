@@ -1,0 +1,49 @@
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+          <div class="form-group">
+            <label for="DepartmentId">Department Id</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white">
+                  <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="DepartmentId.valid" [class.red-icon]="DepartmentId.invalid && DepartmentId.touched"></i>
+                </span>
+              </div>
+              <input name="DepartmentId" #DepartmentId="ngModel" [(ngModel)]="objService.depData.DepartmentId" id="DepartmentId" class="form-control" placeholder="Department Id" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="DepartmentName">Department Name</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white">
+                  <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="DepartmentName.valid" [class.red-icon]="DepartmentName.invalid && DepartmentName.touched"></i>
+                </span>
+              </div>
+              <input name="DepartmentName" #DepartmentName="ngModel" [(ngModel)]="objService.depData.DepartmentName" id="DepartmentName" class="form-control" placeholder="Department Name" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="ContactNumber">Contact Number</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white">
+                  <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="ContactNumber.valid" [class.red-icon]="ContactNumber.invalid && ContactNumber.touched"></i>
+                </span>
+              </div>
+              <input name="ContactNumber" #ContactNumber="ngModel" [(ngModel)]="objService.depData.ContactNumber" id="ContactNumber" class="form-control" placeholder="Contact Number" required maxlength="10" minlength="10">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-success btn-lg" type="submit" [disabled]="form.invalid">
+              <i class="fa fa-database"></i> Create/Update Department
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

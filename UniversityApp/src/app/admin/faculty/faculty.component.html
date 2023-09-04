@@ -1,0 +1,38 @@
+<div><button type="button" class="btn btn-success"  (click)="createNew()" routerLink="/facultyReg">Create New</button></div>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr class="table-warning" >
+            <th scope="col">Faculty ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Department Name</th>
+            <th scope="col">Course Name</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        <tr *ngFor="let f of objs.FacultyAddOnList; let i= index">
+            <td class="align-middle">{{f.FacultyId}}</td> 
+            <td class="align-middle">{{f.FirstName}}</td>
+            <td class="align-middle">{{f.LastName}}</td>
+            <td class="align-middle">{{f.Gender}}</td> 
+            <td class="align-middle">{{f.ContactNumber}}</td>
+            <td class="align-middle">{{f.Email}}</td>
+            <td class="align-middle">{{f.DepartmentName}}</td>
+            <td class="align-middle">{{f.CourseName}}</td>
+            <td>
+                <button type="button" class="btn btn-outline-primary" id="EditCourse" (click)="fillForm(objs.FacultyList[i])" routerLink="/facultyReg">Edit</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-outline-danger" id="DeleteCourse" (click)="onDelete(f.FacultyId)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+  

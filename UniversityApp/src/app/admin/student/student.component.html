@@ -1,0 +1,46 @@
+<div><button type="button" class="btn btn-success" (click)="createNew()" routerLink="/studentReg">Create New</button></div>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr class="table-warning">
+            <th class="text-center" scope="col">Student ID</th>
+            <th class="text-center" scope="col">First Name</th>
+            <th class="text-center" scope="col">Last Name</th>
+            <th class="text-center" scope="col">Gender</th>
+            <th class="text-center" scope="col">Contact Number</th>
+            <th class="text-center" scope="col" text-align: center>Email</th>
+            <th class="text-center" scope="col">Date of Birth</th>
+            <th class="text-center" scope="col">Department Name</th>
+            <th class="text-center" scope="col">Branch Name</th>
+            <th class="text-center" scope="col">Enrollment Date</th>
+            <th class="text-center" scope="col">Address</th>
+            <th class="text-center" scope="col">Semester Date</th>
+            <th class="text-center" scope="col">Update</th>
+            <th class="text-center" scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        <tr *ngFor="let s of objs.StudentAddOnList; let i=index">
+            <td class="align-middle">{{s.StudentId}}</td> 
+            <td class="align-middle">{{s.FirstName}}</td>
+            <td class="align-middle">{{s.LastName}}</td>
+            <td class="align-middle">{{s.Gender}}</td> 
+            <td class="align-middle">{{s.ContactNumber}}</td>
+            <td class="align-middle">{{s.Email}}</td>
+            <td class="align-middle">{{s.DateOfBirth}}</td>
+            <td class="align-middle">{{s.DepartmentName}}</td>
+            <td class="align-middle">{{s.BranchName}}</td>
+            <td class="align-middle">{{s.EnrollmentDate}}</td>
+            <td class="align-middle">{{s.Saddress}}</td>
+            <td class="align-middle">{{s.Semester}}</td>
+            <td>
+                <button type="button" class="btn btn-outline-primary"  id="EditCourse" (click)="fillForm(objs.StudentList[i])" routerLink="/studentReg">Edit</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-outline-danger"  id="DeleteCourse" (click)="onDelete(s.StudentId)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+  

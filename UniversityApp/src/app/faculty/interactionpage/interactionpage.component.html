@@ -1,0 +1,41 @@
+<div class="interaction-container">
+    <h2 class="text-center">Student Interaction</h2>
+    <form>
+      <div class="form-group">
+        <label for="studentId">Student ID:</label>
+        <input id="studentId" name="studentId" [(ngModel)]="studentId" required>
+      </div>
+      <div class="form-group">
+        <label for="studentName">Student Name:</label>
+        <input id="studentName" name="studentName" [(ngModel)]="studentName" required>
+      </div>
+      <div class="form-group">
+        <label for="course">Course:</label>
+        <input id="course" name="course" [(ngModel)]="course" required>
+      </div>
+      <div class="form-group">
+        <label for="department">Department:</label>
+        <input id="department" name="department" [(ngModel)]="department" required>
+      </div>
+      <div class="form-group">
+        <label for="semester">Semester:</label>
+        <input id="semester" name="semester" [(ngModel)]="semester" required>
+      </div>
+      <button type="button" (click)="startChat()">Start Chat</button>
+    </form>
+  
+    <div *ngIf="chatOpen" class="chat-window">
+      <h3>Chat with {{ studentName }}</h3>
+      <div class="chat-messages">
+        <div *ngFor="let message of messages" [class]="message.fromFaculty ? 'from-faculty' : 'from-student'">
+          {{ message.text }}
+        </div>
+      </div>
+      <div class="chat-input">
+        <textarea [(ngModel)]="newMessage"></textarea>
+        <button (click)="sendMessage()">Send</button>
+        <button (click)="endChat()">End Chat</button>
+      </div>
+    </div>
+  </div>
+  

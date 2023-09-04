@@ -1,0 +1,90 @@
+<div class="container dashboard">
+    <div class="row row-1">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Course
+                </div>
+                <div class="card-body">
+                 
+                    <h5 class="card-title">{{ CourseAvailable }}</h5>
+                    <p class="card-text">Available Courses</p>
+                    <a class="btn btn-primary" routerLink="/student_DepartmentInfo">Go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Branch
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"> {{ RegCourses }}</h5>
+                    <p class="card-text">Registered Courses</p>
+                    <a routerLink="/student_CourseInfo" class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Examination
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"> {{ ExamCount }}</h5>
+                    <p class="card-text">Examination Pending
+                    <p>
+                        <a routerLink="/admin_CourseInfo"class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+
+
+<div class="container Registered-Courses">
+    <h2 class="text-center">Registered Courses</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-warning">
+                <th scope="col">Course ID</th>
+                <th scope="col">Course Code</th>
+                <th scope="col">Course Name</th>
+                <th scope="col">Credits</th>
+                <th scope="col">Syllabus</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of courseRegService.CourseRegAddOnList;">
+                <td>{{c.CourseId}}</td> 
+                <td>{{c.CourseCode}}</td>
+                <td >{{c.CourseName}}</td>
+                <td>{{c.Credits}}</td> 
+                <td>{{c.Syllabus}}</td>
+                <td >{{c.Description}}</td>
+            </tr>
+        </tbody>
+      </table>
+</div>
+
+<div class="Exam-Result container">
+    <table class="table table-hover">
+        <thead>
+            <tr  class="table-warning">
+                <th scope="col">Examination ID</th>
+                <th scope="col">Marks Obtained</th>
+                <th scope="col">Grade Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr *ngFor="let c of objs.CourseAddOnList;">
+                <td>{{r.ExamId}}</td> 
+                <td>{{r.MarksObtained}}</td>
+                <td >{{r.Grade}}</td>
+            </tr> -->
+        </tbody>
+      </table>
+</div>
+
+<div class="StudentInfo container">
+
+</div>

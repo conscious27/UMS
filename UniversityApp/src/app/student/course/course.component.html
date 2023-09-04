@@ -1,0 +1,54 @@
+<div class="container Available Courses">
+  <h2 class="text-center">Available Courses</h2>
+  <table class="table table-hover">
+    <thead>
+        <tr class="table-warning">
+            <th scope="col">Course ID</th>
+            <th scope="col">Course Code</th>
+            <th scope="col">Course Name</th>
+            <th scope="col">Credits</th>
+            <th scope="col">Syllabus</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of courseService.CourseAddOnList;">
+            <td>{{c.CourseId}}</td> 
+            <td>{{c.CourseCode}}</td>
+            <td >{{c.CourseName}}</td>
+            <td>{{c.Credits}}</td> 
+            <td>{{c.Syllabus}}</td>
+            <td >{{c.Description}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<div class="container RegisteredCourses">
+  <h2 class="text-center">Registered Courses</h2>
+  <table class="table table-hover">
+      <thead>
+          <tr class="table-warning">
+              <th scope="col">Course ID</th>
+              <th scope="col">Course Code</th>
+              <th scope="col">Course Name</th>
+              <th scope="col">Credits</th>
+              <th scope="col">Syllabus</th>
+              <th scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let c of courseRegService.CourseRegAddOnList;">
+              <td>{{c.CourseId}}</td> 
+              <td>{{c.CourseCode}}</td>
+              <td >{{c.CourseName}}</td>
+              <td>{{c.Credits}}</td> 
+              <td>{{c.Syllabus}}</td>
+              <td >{{c.Description}}</td>
+          </tr>
+      </tbody>
+    </table>
+</div>
+

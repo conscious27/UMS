@@ -1,0 +1,73 @@
+<div>
+
+   <div *ngIf="onclick == false" class="attendance-search-container">
+    <h2 class="text-center">ATTENDANCE</h2>
+    <form>
+      <div class="form-group">
+        <label for="course">Course:</label>
+        <select id="course" name="course" [(ngModel)]="selectedCourse" (change)="updateBranchOptions()">
+          <option value="btech">B-tech</option>
+          <option value="bca">BCA</option>
+          <option value="bba">BBA</option>
+          <option value="bcom">B.Com</option>
+          <option value="law">BA.LLB</option>
+          <option value="fashion">Fashion</option>
+          <option value="journalism">Journalism</option>
+          <!-- Add more course options -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="branch">Branch:</label>
+        <select id="branch" name="branch">
+          <option *ngFor="let branch of selectedBranches" [value]="branch.value">{{ branch.label }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="semester">Semester:</label>
+        <select id="semester" name="semester">
+          <option value="1">1st Semester</option>
+          <option value="2">2nd Semester</option>
+          <option value="3">3rd Semester</option>
+          <option value="4">4th Semester</option>
+          <option value="5">5th Semester</option>
+          <option value="6">6th Semester</option>
+          <option value="7">7th Semester</option>
+          <option value="8">8th Semester</option>
+          <option value="9">9th Semester</option>
+          <option value="10">10th Semester</option>
+          <!-- Add more semester options -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+      </div>
+      <button type="button" (click)="searchAttendance()">Search</button>
+    </form>
+  </div>
+
+   <div  *ngIf="onclick == true" class="attendance-table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Student Name</th>
+          <th>Attendance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of data">
+          <td>{{ student.id }}</td>
+          <td>{{ student.name }}</td>
+          <td>
+            <select [(ngModel)]="student.attendance">
+              <option value="present">Present</option>
+              <option value="absent">Absent</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" >Upload Attendance</button>
+  </div>
+</div>
