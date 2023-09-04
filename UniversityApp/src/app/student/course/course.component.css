@@ -1,13 +1,7 @@
 body {
-    
+
     text-align: center;
 }
-
-
-
-
-
-
 
 
 courses {
@@ -19,6 +13,7 @@ courses {
   courses td, courses th {
     border: 1px solid #ddd;
     padding: 8px;
+    text-align: center;
   }
   
   courses tr:nth-child(even){background-color: #f2f2f2;}
@@ -32,3 +27,11 @@ courses {
     background-color: #04AA6D;
     color: white;
   }
+
+  th{
+    text-align: center;
+}
+td{
+    
+        text-align: center;
+    }

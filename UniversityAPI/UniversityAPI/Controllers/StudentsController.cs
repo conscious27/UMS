@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Azure.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -188,6 +189,55 @@ namespace UniversityAPI.Controllers
             }
 
             return Ok(student);
+        }
+
+        [HttpGet("filter/{id}")]
+        public async Task<ActionResult<List<StudentAddOn>>> GetStudentAddOnByFacultyId(string id)
+        {
+            try
+            {
+                var faculty = _context.Faculties.FirstOrDefault(f => f.FacultyId == id);
+
+                if (faculty == null)
+                {
+                    return NotFound("Faculty not found");
+                }
+
+                // Get the CourseId taught by the faculty
+                var courseId = faculty.CourseId;
+
+                // Find students who are enrolled in the same course
+                var studentsEnrolledInCourse =  _context.CourseReg
+                    .Where(cr => cr.CourseId == courseId)
+                    .Select(cr => cr.StudentId)
+                    .ToList();
+
+                // Retrieve student details based on the student IDs
+                var filteredStudents = await _context.Students
+                    .Where(s => studentsEnrolledInCourse.Contains(s.StudentId))
+                    .Select(s => new StudentAddOn
+                    {
+                        StudentId = s.StudentId,
+                        FirstName = s.FirstName,
+                        LastName = s.LastName,
+                        Gender = s.Gender,
+                        ContactNumber = s.ContactNumber,
+                        Email = s.Email,
+                        DateOfBirth = s.DateOfBirth,
+                        DepartmentName = s.Department.DepartmentName,
+                        BranchName = s.Branch.BranchName,
+                        EnrollmentDate = s.EnrollmentDate,
+                        Saddress = s.Saddress,
+                        Semester = s.Semester
+                    })
+                    .ToListAsync(); // Await the ToListAsync() here
+
+                return Ok(filteredStudents);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
 

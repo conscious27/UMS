@@ -1,0 +1,95 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="ExamId.valid"
+                        [class.red-icon]="ExamId.invalid && ExamId.touched"></i>
+                    <input name="ExamId" #ExamId="ngModel" [(ngModel)]="objService.ExamData.ExamId"
+                        placeholder="Exam Id" class="form-control" required  [readonly]="!isEditMode">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="CourseId.valid"
+                        [class.red-icon]="CourseId.invalid && CourseId.touched"></i>
+                    <select name="CourseId" #CourseId="ngModel" id="CourseId"
+                        [(ngModel)]="objService.ExamData.CourseId" class="form-control" required [disabled]="!isEditMode">
+                        <option *ngFor="let course of courseService.CourseList" [value]="course.CourseId">{{
+                            course.CourseName }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="Doe.valid"
+                        [class.red-icon]="Doe.invalid && Doe.touched"></i>
+                    <input name="Doe" type="datetime-local" #Doe="ngModel" [(ngModel)]="objService.ExamData.Doe"
+                        placeholder="Doe" class="form-control" required [readonly]="!isEditMode">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="Duration.valid"
+                        [class.red-icon]="Duration.invalid && Duration.touched"></i>
+                    <input name="Duration" #Duration="ngModel" [(ngModel)]="objService.ExamData.Duration"
+                        placeholder="Duration" class="form-control" required >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="Semester.valid"
+                        [class.red-icon]="Semester.invalid && Semester.touched"></i>
+                    <input name="Semester" #Semester="ngModel" [(ngModel)]="objService.ExamData.Semester"
+                        placeholder="Semester" class="form-control" required  [readonly]="!isEditMode">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="Type.valid"
+                        [class.red-icon]="Type.invalid && Type.touched"></i>
+                    <select name="Type" #Type="ngModel" [(ngModel)]="objService.ExamData.Type"
+                        class="form-control" required>
+                        <option value="Final">Final</option>
+                        <option value="Midterm">Midterm</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-success btn-lg" type="submit" [disabled]="form.invalid">
+            <i class="fa fa-database"></i> Create/Update Course </button>
+    </div>
+
+
+</form>

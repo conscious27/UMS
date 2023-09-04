@@ -35,6 +35,8 @@ export class AuthenticationService {
       },
       (error) => {
         console.error(error);
+        alert("Invalid User ID or Password")
+
       }
     );
   }

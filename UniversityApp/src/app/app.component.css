@@ -1,14 +1,15 @@
 .header{
     background-image: var(--bs-gradient);
+background-color:#12446b; 
 }
 
+
+
 .main{
-    /* background-color: whitesmoke; */
     height: 1000px;
     background-image: url('src\images\university.jpg');
     background-size: 1920px 1080px;
-    background-repeat: no-repeat;
-    
+    background-repeat: no-repeat;   
 }
 
 .footer{

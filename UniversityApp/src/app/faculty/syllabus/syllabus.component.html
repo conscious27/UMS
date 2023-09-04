@@ -1,0 +1,23 @@
+<!-- syllabus.component.html -->
+<div class="syllabus-container">
+    <h2 class="text-center">Syllabus</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Branch Name</th>
+          <th>Department Name</th>
+          <th>Semester</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let syllabus of syllabusData">
+          <td>{{ syllabus.branch }}</td>
+          <td>{{ syllabus.department }}</td>
+          <td>{{ syllabus.semester }}</td>
+          <td><a [href]="syllabus.link" target="_blank">Download</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

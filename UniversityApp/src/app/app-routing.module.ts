@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { StudentDashboardComponent } from './student/dashboard/dashboard.component';
 import { FacultyDashboardComponent } from './faculty/dashboard/dashboard.component';
 import { AdminDashboardComponent } from './admin/dashboard/dashboard.component';
+import { AttendanceComponent } from './faculty/attendance/attendance.component';
 import { StudentPersonalinfoComponent } from './student/personalinfo/personalinfo.component';
 import { StudentCourseComponent } from './student/course/course.component';
 import { StudentAttendanceComponent } from './student/attendance/attendance.component';
@@ -21,7 +22,14 @@ import { FacultyRegComponent } from './admin/faculty-reg/faculty-reg.component';
 import { StudentRegComponent } from './admin/student-reg/student-reg.component';
 import { StudentFacultyComponent } from './student/faculty/faculty.component';
 import { RegCourseComponent } from './student/reg-course/reg-course.component';
-
+import { FacultyExaminationComponent } from './faculty/examination/examination.component';
+import { InteractionpageComponent } from './faculty/interactionpage/interactionpage.component';
+import { AssignmentsComponent } from './faculty/assignments/assignments.component';
+import { SyllabusComponent } from './faculty/syllabus/syllabus.component';
+import { FacultyStudentComponent } from './faculty/student/student.component';
+import { FacultyPersonalInfoComponent } from './faculty/personal-info/personal-info.component';
+import { ExaminationComponent } from './admin/examination/examination.component';
+import { ExamRegComponent } from './admin/exam-reg/exam-reg.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -47,7 +55,20 @@ const routes: Routes = [
   {path:'student_fee',component:StudentFeeComponent},
   {path:'admin_personalInfo', component:AdminPersonalInfoComponent},
   {path:'student_faculty', component:StudentFacultyComponent},
-  {path:'student_courseReg', component:RegCourseComponent}
+  {path:'student_courseReg', component:RegCourseComponent},
+  {path:'faculty_attendance', component:AttendanceComponent},
+  {path:'faculty_examination', component:FacultyExaminationComponent},
+  {path:'faculty_interaction', component:InteractionpageComponent},
+  {path:'faculty_assignments', component:AssignmentsComponent},
+  {path:'faculty_syllabus', component:SyllabusComponent},
+  {path:'student_personalInfo', component:StudentPersonalinfoComponent},
+  {path:'student_course',component:StudentCourseComponent},
+  {path:'student_attendance',component:StudentAttendanceComponent},
+  {path:'student_fee',component:StudentFeeComponent},
+  {path:'faculty_student', component:FacultyStudentComponent},
+  {path:'faculty_personalInfo', component:FacultyPersonalInfoComponent},
+  {path:'admin_ExamInfo', component:ExaminationComponent},
+  {path:'examReg', component:ExamRegComponent}
 ];
 
 @NgModule({

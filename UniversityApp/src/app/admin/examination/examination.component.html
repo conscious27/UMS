@@ -1,0 +1,34 @@
+<div *ngIf="this.nvs.navBarMode === 'ADMIN'"><button type="button" class="btn btn-success"  (click)="createNew()" routerLink="/examReg">Create New</button></div>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr class="table-warning">
+            <th scope="col">Examination ID</th>
+            <th scope="col">Course Name</th>
+            <th scope="col">Date of Examination</th>
+            <th scope="col">Duration (in Hr)</th>
+            <th scope="col">Semester</th>
+            <th scope="col">Type</th>
+            <th *ngIf="this.nvs.navBarMode === 'ADMIN'" scope="col">Update</th>
+            <th *ngIf="this.nvs.navBarMode === 'ADMIN'" scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of objs.ExamAddOnList; let i= index">
+            <td>{{e.ExamId}}</td> 
+            <td>{{e.CourseName}}</td>
+            <td >{{e.Doe}}</td>
+            <td>{{e.Duration}}</td> 
+            <td>{{e.Semester}}</td>
+            <td >{{e.Type}}</td>
+            <td *ngIf="this.nvs.navBarMode === 'ADMIN'">
+                <button type="button" class="btn btn-outline-primary"  id="EditCourse" (click)="fillForm(objs.ExamList[i])" routerLink="/examReg">Edit</button>
+            </td>
+            <td *ngIf="this.nvs.navBarMode === 'ADMIN'">
+                <button type="button" class="btn btn-outline-danger"  id="DeleteCourse" (click)="onDelete(e.ExamId)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+  

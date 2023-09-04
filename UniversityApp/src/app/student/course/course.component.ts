@@ -42,10 +42,3 @@ export class StudentCourseComponent implements OnInit {
   }
 }
   
-
-
-
-
-
-
-

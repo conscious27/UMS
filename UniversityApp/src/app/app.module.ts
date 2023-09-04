@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StudentDashboardComponent } from './student/dashboard/dashboard.component';
@@ -8,6 +8,8 @@ import { FacultyDashboardComponent } from './faculty/dashboard/dashboard.compone
 import { AdminDashboardComponent } from './admin/dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AttendanceComponent } from './faculty/attendance/attendance.component';
+import { FacultyExaminationComponent } from './faculty/examination/examination.component';
 import { StudentPersonalinfoComponent } from './student/personalinfo/personalinfo.component';
 import { StudentCourseComponent } from './student/course/course.component';
 import { StudentAttendanceComponent } from './student/attendance/attendance.component';
@@ -26,6 +28,13 @@ import { StudentRegComponent } from './admin/student-reg/student-reg.component';
 import { StudentFacultyComponent } from './student/faculty/faculty.component';
 import { RegCourseComponent } from './student/reg-course/reg-course.component';
 import { DatePipe } from '@angular/common';
+import { InteractionpageComponent } from './faculty/interactionpage/interactionpage.component';
+import { AssignmentsComponent } from './faculty/assignments/assignments.component';
+import { SyllabusComponent } from './faculty/syllabus/syllabus.component';
+import { FacultyStudentComponent } from './faculty/student/student.component';
+import { FacultyPersonalInfoComponent } from './faculty/personal-info/personal-info.component';
+import { ExaminationComponent } from './admin/examination/examination.component';
+import { ExamRegComponent } from './admin/exam-reg/exam-reg.component';
 
 @NgModule({
   declarations: [
@@ -45,13 +54,23 @@ import { DatePipe } from '@angular/common';
     CourseRegComponent,
     FacultyRegComponent,
     StudentRegComponent,
+    FacultyDashboardComponent,
+    AttendanceComponent,
+    FacultyExaminationComponent,
     StudentPersonalinfoComponent,
     StudentCourseComponent,
     StudentAttendanceComponent,
     StudentFeeComponent,
     AdminPersonalInfoComponent,
     StudentFacultyComponent,
-    RegCourseComponent
+    RegCourseComponent,
+    InteractionpageComponent,
+    AssignmentsComponent,
+    SyllabusComponent,
+    FacultyStudentComponent,
+    FacultyPersonalInfoComponent,
+    ExaminationComponent,
+    ExamRegComponent,
   ],
   imports: [
     BrowserModule,

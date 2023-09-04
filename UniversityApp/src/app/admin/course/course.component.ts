@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseInfoService } from 'src/app/shared/course-info.service';
+import jwtDecode from 'jwt-decode';
+import { NavBarAlterService } from 'src/app/nav-bar-alter.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-course',
@@ -7,11 +10,13 @@ import { CourseInfoService } from 'src/app/shared/course-info.service';
   styleUrls: ['./course.component.css']
 })
 export class CourseComponent implements OnInit {
-  constructor(public objs:CourseInfoService) {}
+  constructor(public objs:CourseInfoService, public navBarService: NavBarAlterService,
+    public router:Router) {}
 
   ngOnInit(): void {
     this.objs.getCoursesAddOn();
     this.objs.getCourseInfoList();
+
   }
 
   fillForm(selectedCourse)

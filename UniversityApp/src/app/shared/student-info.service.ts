@@ -39,4 +39,7 @@ export class StudentInfoService {
   getStudentsAddOn(){
     return this.objHttp.get(this.StudentUrl + "/StudentAddOn").toPromise().then(res => this.StudentAddOnList = res as StudentAddOn[]);
   }
+  getStudentAddOnByFaculty(id){
+    return this.objHttp.get(this.StudentUrl + '/filter/' + id).toPromise().then(res => this.StudentAddOnList = res as StudentAddOn[]);
+  }
 }

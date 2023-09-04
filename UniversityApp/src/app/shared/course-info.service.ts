@@ -21,6 +21,10 @@ export class CourseInfoService {
   getCourseInfoList() {
     return this.objHttp.get(this.CourseUrl).toPromise().then(res => this.CourseList = res as CourseInfo[]);
   }
+  getCourseInfoListById(id)
+  {
+    return this.objHttp.get(this.CourseUrl + "/" + id).toPromise().then(res => this.CourseData = res as CourseInfo);
+  }
   delCourseInfo(id) {
     return this.objHttp.delete(this.CourseUrl + "/" + id);
   }

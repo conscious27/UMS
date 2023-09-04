@@ -7,13 +7,13 @@ namespace UniversityAPI.Models;
 public partial class Examination
 {
     [Key]
-    [StringLength(5, ErrorMessage = "DepartmentID Length Cannot Exceeds 5 Character")]
-    [RegularExpression(@"^E.*", ErrorMessage = "DepartmentID must start with E")]
+    [StringLength(5, ErrorMessage = "ExaminationID Length Cannot Exceeds 5 Character")]
+    [RegularExpression(@"^E.*", ErrorMessage = "ExaminationID must start with E")]
     public string ExamId { get; set; } = null!;
     [Required(ErrorMessage = "CourseID is Mandatory")]
     public string CourseId { get; set; } = null!;
     [Required(ErrorMessage = "Date of Examination is Required")]
-    [DataType(DataType.Date, ErrorMessage = "This is not a Date Type")]
+    //[DataType(DataType.Date, ErrorMessage = "This is not a Date Type")]
     public DateTime Doe { get; set; }
     [Required(ErrorMessage = "Duration is Required")]
     public int Duration { get; set; }

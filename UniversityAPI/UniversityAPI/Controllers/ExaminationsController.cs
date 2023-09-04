@@ -129,7 +129,72 @@ namespace UniversityAPI.Controllers
             return NoContent();
         }
 
-        private bool ExaminationExists(string id)
+
+        [HttpGet("ExamAddOn")]
+        public async Task<ActionResult<List<ExaminationAddOn>>> GetExaminationAddOn()
+        {
+            var examinations = await _context.Examinations
+                .Select(f => new ExaminationAddOn
+                {
+                    ExamId = f.ExamId,
+                    CourseName = f.Course.CourseName,
+                    Doe = f.Doe,
+                    Duration = f.Duration,
+                    Semester = f.Semester,
+                    Type = f.Type,
+                })
+                    .ToListAsync();
+
+
+            return Ok(examinations);
+        }
+
+        [HttpGet("ExamAddOn/{id}/{semester}")]
+        public async Task<ActionResult<List<ExaminationAddOn>>> GetExaminationAddOnByStudent(string id, int semester)
+        {
+            try
+            {
+                // 1. Filter all examinations by semester
+                var examinations = await _context.Examinations
+                    .Where(e => e.Semester == semester)
+                    .ToListAsync();
+
+                // 2. Get all CourseReg and filter it by id (studentid)
+                var courseRegs = await _context.CourseReg
+                    .Where(cr => cr.StudentId == id)
+                    .ToListAsync();
+
+                // 3. Convert Examination objects to ExaminationAddOn objects
+                var filteredExaminations = examinations
+                    .Where(e => courseRegs.Any(cr => cr.CourseId == e.CourseId))
+                    .ToList();
+
+                var examAddOnData = _context.Examinations
+                    .Where(e => filteredExaminations.Any(fe => fe.CourseId == e.CourseId))
+                    .Select(e => new ExaminationAddOn
+                    {
+                        ExamId = e.ExamId,
+                        CourseName = e.Course.CourseName,
+                        Doe = e.Doe,
+                        Duration = e.Duration,
+                        Semester = e.Semester,
+                        Type = e.Type
+                    })
+                    .ToListAsync();
+
+                // 4. Return the filtered list of examinations as ExaminationAddOn objects
+                return Ok(examAddOnData);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+
+
+
+    private bool ExaminationExists(string id)
         {
             return (_context.Examinations?.Any(e => e.ExamId == id)).GetValueOrDefault();
         }

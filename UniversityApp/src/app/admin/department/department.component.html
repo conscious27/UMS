@@ -1,27 +1,27 @@
-<div><button type="button" (click)="createNew()" routerLink="/departmentReg">Create New</button></div>
+<div><button type="button" class="btn btn-success" (click)="createNew()" routerLink="/departmentReg">Create New</button></div>
 
 
 
 <table class="table table-hover">
     <thead>
-        <tr>
-            <th scope="col">DepartmentID</th>
+        <tr class="table-warning"  >
+            <th scope="col">Department ID</th>
             <th scope="col">Department Name</th>
             <th scope="col">Contact Number</th>
             <th scope="col">Update</th>
             <th scope="col">Delete</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="table-group-divider" >
         <tr *ngFor="let d of objs.depList">
-            <td>{{d.DepartmentId}}</td> 
-            <td>{{d.DepartmentName}}</td>
-            <td>{{d.ContactNumber}}</td>
+            <td class="align-middle">{{d.DepartmentId}}</td> 
+            <td class="align-middle">{{d.DepartmentName}}</td>
+            <td class="align-middle">{{d.ContactNumber}}</td>
             <td>
-                <button type="button" id="viewDepartment" routerLink="/departmentReg" (click)="fillForm(d)">Edit</button>
+                <button type="button" class="btn btn-outline-primary" id="viewDepartment" routerLink="/departmentReg" (click)="fillForm(d)">Edit</button>
             </td>
             <td>
-                <button type="button" id="viewDepartment" (click)="onDelete(d.DepartmentId)">Delete</button>
+                <button type="button" class="btn btn-outline-danger" id="viewDepartment" (click)="onDelete(d.DepartmentId)">Delete</button>
             </td>
         </tr>
     </tbody>

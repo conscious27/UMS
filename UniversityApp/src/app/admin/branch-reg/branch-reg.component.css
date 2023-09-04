@@ -1,38 +1,38 @@
-/* Apply some general styles
+/* Apply some general styles */
 body {
     font-family: Arial, sans-serif;
-  }
-  
-  .container {
+}
+
+.container {
     margin-top: 30px;
-  }
-  
-  /* Style for form labels */
-  label {
+}
+
+/* Style for form labels */
+label {
     font-weight: bold;
-  }
-  
-  /* Style for input icons */
-  .input-group-text {
+}
+
+/* Style for input icons */
+.input-group-text {
     background-color: #fff;
     border: 1px solid #ccc;
-  }
-  
-  /* Style for green and red icons */
-  .green-icon {
+}
+
+/* Style for green and red icons */
+.green-icon {
     color: green;
-  }
-  
-  .red-icon {
+}
+
+.red-icon {
     color: red;
-  }
-  
-  /* Style for select input */
-  .select-group {
+}
+
+/* Style for select input */
+.select-group {
     position: relative;
-  }
-  
-  .select-group select {
+}
+
+.select-group select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -43,22 +43,22 @@ body {
     background-color: #fff;
     cursor: pointer;
     outline: none;
-  }
-  
-  .select-group select::placeholder {
+}
+
+.select-group select::placeholder {
     color: #999;
-  }
-  
-  .select-group .select-icon {
+}
+
+.select-group .select-icon {
     position: absolute;
     top: 50%;
     right: 15px;
     transform: translateY(-50%);
     pointer-events: none;
-  }
-  
-  /* Style for submit button */
-  .btn-success {
+}
+
+/* Style for submit button */
+.btn-success {
     background-color: #28a745;
     border-color: #28a745;
     color: #fff;
@@ -66,9 +66,9 @@ body {
     font-weight: bold;
     cursor: pointer;
     border-radius: 4px;
-  }
-  
-  .btn-success:hover {
+}
+
+.btn-success:hover {
     background-color: #218838;
     border-color: #1e7e34;
-  }
+}

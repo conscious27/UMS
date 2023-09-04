@@ -1,6 +1,6 @@
 <!-- Header -->
-<header class="bg-primary text-white text-center py-4 header">
-    <h1>AdvanceLink Institute</h1>
+<header class="text-white text-center py-4 header">
+     <h1>AdvanceLink Institute</h1>
 </header>
 
 <!-- ADMIN DASHBOARD -->
@@ -33,10 +33,10 @@
                     <a class="nav-link" routerLink="/admin_StudentInfo">Student</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Examination</a>
+                    <a class="nav-link" routerLink="/admin_ExamInfo">Examination</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/adminInfo">User</a>
+                    <a class="nav-link" routerLink="/adminInfo">User</a>
                 </li>
                 <li class="nav-item">
                     <button class="nav-link" type="button" (click)="Logout()">Logout</button>
@@ -70,7 +70,7 @@
                     <a class="nav-link" routerLink="/student_courseReg">Registration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="">Examination</a>
+                    <a class="nav-link" routerLink="/admin_ExamInfo">Examination</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/student_personalInfo">User</a>
@@ -85,9 +85,9 @@
 
 
 <!-- FACULTY DASHBOARD -->
-<div *ngIf="navBarService.navBarMode === 'STUDENT'">
+<div *ngIf="navBarService.navBarMode === 'FACULTY'">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" routerLink = "/student_dashboard">Faculty Dashboard</a>
+        <a class="navbar-brand" routerLink = "/faculty_dashboard">Faculty Dashboard</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -95,16 +95,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" routerLink="/student_dashboard">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" routerLink="/faculty_dashboard">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/student_faculty">Students</a>
+                    <a class="nav-link" routerLink="/faculty_student">Student</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" routerLink="">Examination</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/courseReg">Course Syllabus</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/student_personalInfo">User</a>
+                    <a class="nav-link" routerLink="/faculty_personalInfo">User</a>
                 </li>
                 <li class="nav-item">
                     <button class="nav-link" type="button" (click)="Logout()">Logout</button>
@@ -114,8 +117,6 @@
     </nav>
 </div>
 
-
-<!-- Main Panel -->
 <div class="main">
     <router-outlet></router-outlet>
 </div>

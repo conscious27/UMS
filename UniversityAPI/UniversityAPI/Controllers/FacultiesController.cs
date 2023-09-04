@@ -152,6 +152,35 @@ namespace UniversityAPI.Controllers
             return Ok(faculties);
         }
 
+        [HttpGet("FacultyAddOn/{facultyId}")]
+        public async Task<ActionResult<FacultyAddOn>> GetFacultyAddOn(string facultyId)
+        {
+            var faculty = await _context.Faculties
+                .Where(f => f.FacultyId == facultyId)
+                .Select(f => new FacultyAddOn
+                {
+                    FacultyId = f.FacultyId,
+                    FirstName = f.FirstName,
+                    LastName = f.LastName,
+                    Gender = f.Gender,
+                    ContactNumber = f.ContactNumber,
+                    Email = f.Email,
+                    DepartmentId = f.DepartmentId,
+                    DepartmentName = f.Department.DepartmentName,
+                    CourseId = f.CourseId,
+                    CourseName = f.Course.CourseName
+                })
+                .FirstOrDefaultAsync();
+
+            if (faculty == null)
+            {
+                return NotFound(); // Return a 404 Not Found if the faculty with the given ID is not found.
+            }
+
+            return Ok(faculty);
+        }
+
+
 
 
         [HttpGet("count")]

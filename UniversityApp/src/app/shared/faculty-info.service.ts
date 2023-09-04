@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FacultyInfoService {
 
+  FacultyAddOnData: FacultyAddOn = new FacultyAddOn();
   FacultyData: FacultyInfo = new FacultyInfo();
   readonly FacultyUrl = 'http://localhost:5175/api/Faculties';
   FacultyList: FacultyInfo[];
@@ -19,6 +20,9 @@ export class FacultyInfoService {
   }
   getFacultyInfoList() {
     return this.objHttp.get(this.FacultyUrl).toPromise().then(res => this.FacultyList = res as FacultyInfo[]);
+  }
+  getFacultyInfoListById(id) {
+    return this.objHttp.get(this.FacultyUrl + "/" + id).toPromise().then(res => this.FacultyData = res as FacultyInfo);
   }
   delFacultyInfo(id) {
     return this.objHttp.delete(this.FacultyUrl + "/" + id);
@@ -33,4 +37,8 @@ export class FacultyInfoService {
   getFacultysAddOn(){
     return this.objHttp.get(this.FacultyUrl + "/FacultyAddOn").toPromise().then(res => this.FacultyAddOnList = res as FacultyAddOn[]);
   }
+  getFacultysAddOnById(id){
+    return this.objHttp.get(this.FacultyUrl + "/FacultyAddOn/" + id).toPromise().then(res => this.FacultyAddOnData = res as FacultyAddOn);
+  }
+
 }

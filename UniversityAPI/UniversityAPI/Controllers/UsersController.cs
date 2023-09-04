@@ -28,7 +28,7 @@ namespace UniversityAPI.Controllers
         }
 
         // GET: api/Users
-        [HttpGet, Authorize(Roles = "Admin")]
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
           if (_context.Users == null)
