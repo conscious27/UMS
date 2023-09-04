@@ -149,6 +149,63 @@ namespace UniversityAPI.Controllers
             return Ok(examinations);
         }
 
+        [HttpGet("ExamAddOnByStudent/{id}")]
+        public async Task<ActionResult<List<ExaminationAddOn>>> GetExaminationAddOnByStudent(string id)
+        {
+
+            //var filteredCourses = _context.CourseReg.FirstOrDefault(c => c.StudentId == id);
+
+            var filteredCourses = _context.CourseReg
+                .Where(cr => cr.StudentId == id)
+                .Select(cr => cr.CourseId)
+                .ToList();
+
+            Console.Write(filteredCourses);
+            if (filteredCourses == null)
+            {
+                return NotFound();
+            }
+            var examinations = await _context.Examinations
+                .Where(f => filteredCourses.Contains(f.CourseId))
+                .Select(f => new ExaminationAddOn
+                {
+                    ExamId = f.ExamId,
+                    CourseName = f.Course.CourseName,
+                    Doe = f.Doe,
+                    Duration = f.Duration,
+                    Semester = f.Semester,
+                    Type = f.Type,
+                }).ToListAsync();
+
+
+            return Ok(examinations);
+        }
+
+
+        [HttpGet("ExamAddOnByStudentCount/{id}")]
+        public async Task<ActionResult<List<ExaminationAddOn>>> GetExaminationAddOnByStudentCount(string id)
+        {
+
+            //var filteredCourses = _context.CourseReg.FirstOrDefault(c => c.StudentId == id);
+
+            var filteredCourses = _context.CourseReg
+                .Where(cr => cr.StudentId == id)
+                .Select(cr => cr.CourseId)
+                .ToList();
+
+            Console.Write(filteredCourses);
+            if (filteredCourses == null)
+            {
+                return NotFound();
+            }
+            var count = await _context.Examinations
+                .Where(f => filteredCourses.Contains(f.CourseId))
+               .CountAsync();
+
+
+            return Ok(count);
+        }
+
         [HttpGet("ExamAddOn/{id}/{semester}")]
         public async Task<ActionResult<List<ExaminationAddOn>>> GetExaminationAddOnByStudent(string id, int semester)
         {

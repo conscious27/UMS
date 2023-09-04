@@ -1,5 +1,5 @@
 <table class="table table-hover">
-    <thead>
+    <thead class="table-warning">
         <tr>
             <th scope="col">Student ID</th>
             <th scope="col">First Name</th>
@@ -15,7 +15,7 @@
             <th scope="col">Semester</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="table-group-divider">
         <tr *ngFor="let s of stdService.StudentAddOnList; let i=index">
             <td>{{s.StudentId}}</td> 
             <td>{{s.FirstName}}</td>

@@ -1,6 +1,11 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
 <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
 
     <div class="form-group">
+        <label for="BranchId">Student Id</label>
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text bg-white">
@@ -14,6 +19,8 @@
     </div>
 
     <div class="form-group">
+        <label for="BranchId">First Name</label>
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text bg-white">
@@ -27,6 +34,8 @@
     </div>
 
     <div class="form-group">
+        <label for="BranchId">Last Name</label>
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text bg-white">
@@ -40,6 +49,8 @@
     </div>
 
     <div class="form-group">
+        <label for="Gender">Gender</label>
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text bg-white">
@@ -57,6 +68,8 @@
     </div>
 
     <div class="form-group">
+        <label for="ContactNumber">Contact Number</label>
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text bg-white">
@@ -71,6 +84,8 @@
     </div>
 
     <div class="form-group">
+        <label for="Email">Email</label>
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text bg-white">
@@ -84,12 +99,14 @@
     </div>
 
     <div class="form-group">
+        <label for="DateOfBirth">Date of Birth</label>
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text bg-white">
                     <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="DateOfBirth.valid"
                         [class.red-icon]="DateOfBirth.invalid && DateOfBirth.touched"></i>
-                    <input type="datetime" name="DateOfBirth" #DateOfBirth="ngModel" [(ngModel)]="objService.StudentData.DateOfBirth" placeholder="DateOfBirth"
+                    <input type="datetime-local" name="DateOfBirth" #DateOfBirth="ngModel" [(ngModel)]="objService.StudentData.DateOfBirth" placeholder="DateOfBirth"
                         class="form-control" required>
                 </div>
             </div>
@@ -97,6 +114,8 @@
     </div>
 
     <div class="form-group">
+        <label for="DepartmentId">Department Name</label>
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text bg-white">
@@ -113,6 +132,8 @@
     </div>
 
     <div class="form-group">
+        <label for="BranchId">Branch Name</label>
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text bg-white">
@@ -129,32 +150,24 @@
     </div>
 
     <div class="form-group">
+        <label for="EnrollmentDate">Enrollmnt Date</label>
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text bg-white">
                     <i class="fa fa-diamond" aria-hidden="true" [class.green-icon]="EnrollmentDate.valid"
                         [class.red-icon]="EnrollmentDate.invalid && EnrollmentDate.touched"></i>
-                    <input type="date" name="EnrollmentDate" #EnrollmentDate="ngModel" [(ngModel)]="objService.StudentData.EnrollmentDate" placeholder="EnrollmentDate"
+                    <input type="datetime-local" name="EnrollmentDate" #EnrollmentDate="ngModel" [(ngModel)]="objService.StudentData.EnrollmentDate" placeholder="EnrollmentDate"
                         class="form-control" required>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="form-group">
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <div class="input-group-text bg-white">
-                    <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="StudentId.valid"
-                        [class.red-icon]="StudentId.invalid && StudentId.touched"></i>
-                    <input name="StudentId" #StudentId="ngModel" [(ngModel)]="objService.StudentData.StudentId"
-                        placeholder="Faculty Id" class="form-control" required>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="form-group">
+        <label for="Saddress">Student Address</label>
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text bg-white">
@@ -168,6 +181,8 @@
     </div>
 
     <div class="form-group">
+        <label for="Semester">Semester</label>
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text bg-white">
@@ -183,7 +198,7 @@
 
     <div class="form-group">
         <button class="btn btn-success btn-lg" type="submit" [disabled]="form.invalid">
-            <i class="fa fa-database"></i> Create/Update Course </button>
+            <i class="fa fa-database"></i> Create/Update Student </button>
     </div>
 
 

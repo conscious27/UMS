@@ -28,14 +28,12 @@ public partial class Student
     [StringLength(255)]
     public string? Email { get; set; }
     [Required(ErrorMessage = "DateOfBirth is Required")]
-    [DataType(DataType.Date, ErrorMessage = "This is not in Date Format")]
     public DateTime DateOfBirth { get; set; }
     [Required(ErrorMessage = "DepartmentID is Required")]
     public string DepartmentId { get; set; } = null!;
     [Required(ErrorMessage = "BranchID is Required")]
     public string BranchId { get; set; } = null!;
     [Required(ErrorMessage = "EnrollmentDate is Required")]
-    [DataType(DataType.Date, ErrorMessage = "This is not in Date Format")]
     public DateTime EnrollmentDate { get; set; }
     [Required(ErrorMessage = "SAddress is Required")]
     [StringLength(100,ErrorMessage = "SAddress Length Cannot Exceed 100 Characters")]

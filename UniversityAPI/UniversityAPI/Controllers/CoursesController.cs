@@ -175,6 +175,21 @@ namespace UniversityAPI.Controllers
             return Ok(courses);
         }
 
+        [HttpGet("GetAllCoursesCount/{id}")]
+        public async Task<IActionResult> GetAllCoursesCount(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return BadRequest("Invalid 'id' parameter");
+            }
+
+            var count = await _context.Courses
+                .Where(cr => cr.DepartmentId == id)
+                    .CountAsync();
+
+
+            return Ok(count);
+        }
 
 
         [HttpGet("count")]

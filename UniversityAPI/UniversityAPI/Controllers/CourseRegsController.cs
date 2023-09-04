@@ -76,6 +76,22 @@ namespace UniversityAPI.Controllers
             return Ok(courses);
         }
 
+        [HttpGet("GetCourseByStudentIdCount/{id}")]
+        public async Task<ActionResult<List<CourseRegAddOn>>> GetCoursesByStudentIdCount(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return BadRequest("Invalid 'id' parameter");
+            }
+
+            var count = await _context.CourseReg
+                .Where(cr => cr.StudentId == id)
+                    .CountAsync();
+
+
+            return Ok(count);
+        }
+
 
 
         // PUT: api/CourseRegs/5
