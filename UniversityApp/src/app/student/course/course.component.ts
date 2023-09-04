@@ -40,5 +40,6 @@ export class StudentCourseComponent implements OnInit {
   getAvailableCourses(id){
     this.courseService.getAllCourses(id);
   }
+
 }
   

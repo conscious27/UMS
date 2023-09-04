@@ -37,4 +37,10 @@ export class ExamInfoService {
   getExamsAddOn(){
     return this.objHttp.get(this.ExamUrl + "/ExamAddOn").toPromise().then(res => this.ExamAddOnList = res as ExamAddOn[]);
   }
+  getExamsAddOnByStudent(id){
+    return this.objHttp.get(this.ExamUrl + "/ExamAddOnByStudent/" + id).toPromise().then(res => this.ExamAddOnList = res as ExamAddOn[]);
+  }
+  getExamsAddOnByStudentCount(id){
+    return this.objHttp.get(this.ExamUrl + "/ExamAddOnByStudentCount/" + id);
+  }
 }

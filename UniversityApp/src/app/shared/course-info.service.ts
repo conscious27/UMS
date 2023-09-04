@@ -42,6 +42,10 @@ export class CourseInfoService {
   getAllCourses(departmentId){
     return this.objHttp.get(this.CourseUrl + "/GetAllCourses/" + departmentId).toPromise().then(res => this.CourseAddOnList = res as CourseAddOn[]);
   }
+
+  getAllCoursesCount(departmentId){
+    return this.objHttp.get(this.CourseUrl + "/GetAllCoursesCount/" + departmentId);
+  }
   
   
 }

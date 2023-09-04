@@ -31,9 +31,8 @@ export class ExaminationComponent implements OnInit {
       }
       else if (tokenPayload.Role === "Student") {
         this.objs.getExamInfoList();
-        this.objs.getExamsAddOn();
+        this.objs.getExamsAddOnByStudent(tokenPayload.AdminId);
       }
-      console.log(this.nvs.navBarMode)
     } catch (error) {
       localStorage.clear();
       this.router.navigate(['/']);

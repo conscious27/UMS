@@ -16,7 +16,7 @@ export class AuthenticationService {
     return this.http.post('http://localhost:5175/api/Users/login',body).subscribe(
       (response : any) => {
         const token = response.token;
-        console.log("Token: ", token)
+        // console.log("Token: ", token)
 
         // store the token in localStorage
         localStorage.setItem('authToken', token);

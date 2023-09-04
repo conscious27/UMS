@@ -37,4 +37,8 @@ export class CourseRegService {
     return this.objHttp.get(this.CourseRegUrl + "/GetCourseByStudentId/" + studentId).toPromise().then(res => this.CourseRegAddOnList = res as CourseRegAddOn[]);
   }
 
+  getCoursesRegAddOnCount(studentId){
+    return this.objHttp.get(this.CourseRegUrl + "/GetCourseByStudentIdCount/" + studentId);
+  }
+
 }
